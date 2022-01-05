@@ -19,14 +19,12 @@ import {
     SharedToolbar,
     ContributorsList,
 } from '../components';
-import { LatestReleases } from '../../docs';
 import * as Colors from '@brightlayer-ui/colors';
 import { useHistory } from 'react-router-dom';
 
 import { cardData } from '../../__configuration__/landingPage/cardData';
 import { getScheduledSiteConfig } from '../../__configuration__/themes';
 import { Spacer } from '@brightlayer-ui/react-components';
-import { ReleaseInfo } from '../../docs/release-notes';
 import { currentMaintainers, contributors } from '../../__configuration__/contributors';
 
 import developImage from '../assets/home/develop.jpg';
@@ -116,32 +114,6 @@ export const LandingPage: React.FC = (): JSX.Element => {
                         </Grid>
                     ))}
                 </Grid>
-            </LandingSection>
-            <LandingSection title={'Latest Updates'} align={'center'} maxWidth={750} background={'dark'}>
-                <Typography style={{ marginTop: theme.spacing(2), color: theme.palette.text.secondary }}>
-                    Get the latest updates on guidelines, components, and documentation across platforms.
-                </Typography>
-                {LatestReleases.slice(0, 2).map((item: ReleaseInfo) => (
-                    <div key={item.title} style={{ color: theme.palette.text.secondary, textAlign: 'left' }}>
-                        <div style={{ marginTop: theme.spacing(2), display: 'flex' }}>
-                            <Typography variant={'h6'} color={'primary'}>
-                                {item.title}
-                            </Typography>
-                            <Spacer />
-                            <Typography color={'inherit'}>{item.date}</Typography>
-                        </div>
-                        <Typography variant={'subtitle2'}>{`v${item.version}`}</Typography>
-                        {item.summary}
-                    </div>
-                ))}
-                <Button
-                    variant={'outlined'}
-                    color={'primary'}
-                    style={{ marginTop: theme.spacing(1) }}
-                    onClick={(): void => history.push('/release-notes')}
-                >
-                    VIEW ALL
-                </Button>
             </LandingSection>
 
             {/* Carousel Section */}
