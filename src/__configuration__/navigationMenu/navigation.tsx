@@ -142,37 +142,6 @@ export const pageDefinitions: SimpleNavItem[] = [
         ],
     },
     {
-        title: 'Designing with BLUI',
-        url: '/design',
-        pages: [
-            {
-                title: 'Introduction',
-                url: '/intro',
-                component: <MarkdownPage title={'Design Introduction'} markdown={Docs.Design.Introduction} />,
-            },
-            {
-                title: 'Design System Anatomy',
-                url: '/anatomy',
-                component: <MarkdownPage title={'Design System Anatomy'} markdown={Docs.Design.Anatomy} wideLayout />,
-            },
-            {
-                title: 'Accessibility',
-                url: '/accessibility',
-                component: <MarkdownPage title={'Accessibility'} markdown={Docs.Design.Accessibility} />,
-            },
-            {
-                title: 'For Websites',
-                url: '/websites',
-                component: <MarkdownPage title={'Designing for Websites'} markdown={Docs.Design.Websites} />,
-            },
-            {
-                title: 'Project Identity',
-                url: '/project-identity',
-                component: <MarkdownPage title={'Project Identity'} markdown={Docs.Design.ProjectIdentity} />,
-            },
-        ],
-    },
-    {
         title: 'Design Patterns',
         url: '/patterns',
         component: <MarkdownPage title={'Design Patterns'} markdown={Docs.Patterns.Home} />,
@@ -372,12 +341,6 @@ export const pageDefinitions: SimpleNavItem[] = [
         url: '/brightlayer-ui-rebrand',
         hidden: true,
         component: <MarkdownPage title={'Brightlayer UI Rebrand'} markdown={Docs.Community.Rebrand} />,
-    },
-    {
-        title: 'Brightlayer UI Package Migration',
-        url: '/migration',
-        hidden: true,
-        component: <MarkdownPage title={'Brightlayer UI Package Migration'} markdown={Docs.Migration} />,
     },
 ];
 

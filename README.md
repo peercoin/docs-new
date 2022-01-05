@@ -52,7 +52,6 @@ The folder structure of the application is segregated to keep the application an
     |
     └── /docs                               // markdown-based page definitions
         |── /community                      // information on how to be a part of Brightlayer UI
-        |── /design                         // information for designers using Brightlayer UI
         |── /development                    // information for developers using Brightlayer UI
         |── /get-started                    // information on getting started with a project
         |── /patterns                       // design patterns and sample code

@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { LandingPage } from '../pages';
-import { DrawerLayout, Spacer } from '@brightlayer-ui/react-components';
+import { DrawerLayout } from '@brightlayer-ui/react-components';
 import { ContactFab, SharedToolbar } from '../components';
 import { NavigationDrawer } from './navigationDrawer';
 import { AppState } from '../redux/reducers';
-import { Close, Menu } from '@material-ui/icons';
-import { useDispatch, useSelector } from 'react-redux';
+import { Menu } from '@material-ui/icons';
+import { useSelector } from 'react-redux';
 
 import { pageDefinitions, pageRedirects, SimpleNavItem } from '../../__configuration__/navigationMenu/navigation';
 import { getScheduledSiteConfig } from '../../__configuration__/themes';
 import {
     AppBar,
     createStyles,
-    IconButton,
     makeStyles,
     Theme,
     Toolbar,
@@ -22,7 +21,6 @@ import {
     useTheme,
 } from '@material-ui/core';
 import * as Colors from '@brightlayer-ui/colors';
-import { HIDE_BANNER } from '../redux/actions';
 
 const buildRoutes = (routes: SimpleNavItem[], url: string): JSX.Element[] => {
     let ret: any[] = [];
@@ -92,51 +90,10 @@ export const MainRouter = (): JSX.Element => {
     const toolbarHeight = isMobile ? 104 : 112;
     const className = getScheduledSiteConfig().className;
     const sidebarOpen = useSelector((state: AppState) => state.app.sidebarOpen);
-    const [navigateBlui, setNavigateBlui] = useState(false);
-    const showBanner = useSelector((state: AppState) => state.app.showBanner);
-    const sessionStorage = window.sessionStorage;
-    const dispatch = useDispatch();
-
-    const getBluiRebrandAppbar = (): JSX.Element => (
-        <AppBar position="sticky" color={'secondary'} elevation={0}>
-            <Toolbar>
-                <div>
-                    {'We are now Brightlayer UI! Learn '}
-                    <a
-                        style={{
-                            textDecoration: 'underline',
-                            cursor: 'pointer',
-                        }}
-                        onClick={(): any => {
-                            setNavigateBlui(true);
-                            dispatch({ type: HIDE_BANNER });
-                            sessionStorage.setItem('banner-dismissed', 'true');
-                        }}
-                    >
-                        how to migrate
-                    </a>
-                    .
-                </div>
-                <Spacer />
-                <IconButton
-                    style={{ marginRight: -theme.spacing(1) }}
-                    color={'inherit'}
-                    onClick={(): void => {
-                        dispatch({ type: HIDE_BANNER });
-                        sessionStorage.setItem('banner-dismissed', 'true');
-                    }}
-                >
-                    <Close />
-                </IconButton>
-            </Toolbar>
-        </AppBar>
-    );
 
     return (
         <Router>
             <ScrollToTop />
-            {showBanner && getBluiRebrandAppbar()}
-            {navigateBlui && <Redirect to="/migration" push />}
             <DrawerLayout drawer={<NavigationDrawer />} className={className}>
                 <Switch>
                     <Route exact path="/">
