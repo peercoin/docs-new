@@ -40,9 +40,9 @@ export const cardData = [
     },
     {
         title: 'GitHub',
-        description: `All Brightlayer UI resources and materials are open source and available for viewing on our GitHub organization.`,
+        description: `V Systems GitHub organization.`,
         image: github,
-        path: 'https://github.com/brightlayer-ui',
+        path: 'https://github.com/virtualeconomy',
     },
     {
         title: 'Community',
