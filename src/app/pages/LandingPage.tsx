@@ -17,15 +17,13 @@ import {
     CarouselCard,
     FooterLinks,
     SharedToolbar,
-    ContributorsList,
 } from '../components';
 import * as Colors from '@brightlayer-ui/colors';
 import { useHistory } from 'react-router-dom';
 
 import { cardData } from '../../__configuration__/landingPage/cardData';
 import { getScheduledSiteConfig } from '../../__configuration__/themes';
-import { Spacer } from '@brightlayer-ui/react-components';
-import { currentMaintainers, contributors } from '../../__configuration__/contributors';
+// import { Spacer } from '@brightlayer-ui/react-components';
 
 import developImage from '../assets/home/develop.jpg';
 import designImage from '../assets/home/design.jpg';
@@ -138,35 +136,12 @@ export const LandingPage: React.FC = (): JSX.Element => {
                 />
             </CardCarousel>
 
-            <LandingSection title={'Contributors'} background={'light'}>
-                <ContributorsList
-                    contributors={currentMaintainers}
-                    title={'Current Maintainers'}
-                    style={{ margin: `${theme.spacing(4)}px 0` }}
-                />
-                <ContributorsList
-                    contributors={contributors}
-                    title={'Other Contributors'}
-                    style={{ margin: `${theme.spacing(4)}px 0` }}
-                />
-                <div style={{ textAlign: 'center' }}>
-                    <Button
-                        variant={'outlined'}
-                        color={'primary'}
-                        style={{ marginTop: theme.spacing(1) }}
-                        onClick={(): void => history.push('/community/innersourcing')}
-                    >
-                        Become a Contributor!
-                    </Button>
-                </div>
-            </LandingSection>
-
             {/* Footer Section */}
             <FooterLinks />
             <AppBar position={'static'} className={classes.footer} elevation={0}>
                 <Toolbar variant={'dense'}>
                     <Typography variant={'caption'} align={'center'} style={{ flex: '1 1 0px' }}>
-                        Copyright {new Date().getFullYear()} Eaton. Licensed under BSD-3-Clause.
+                        Copyright {new Date().getFullYear()} V Systems. Licensed under BSD-3-Clause.
                     </Typography>
                 </Toolbar>
             </AppBar>

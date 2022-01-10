@@ -4,7 +4,6 @@ import github from '../../../src/app/assets/card-images/github.png';
 import resources from '../../../src/app/assets/card-images/resources.png';
 import patterns from '../../../src/app/assets/card-images/patterns.svg';
 import community from '../../../src/app/assets/card-images/community.png';
-import figma from '../../../src/app/assets/card-images/figma.png';
 import style from '../../../src/app/assets/card-images/style.png';
 import roadmap from '../../../src/app/assets/card-images/roadmap.png';
 
@@ -26,12 +25,6 @@ export const cardData = [
         description: `Learn about common interactions and designs found in Brightlayer UI applications.`,
         image: patterns,
         path: '/patterns',
-    },
-    {
-        title: 'Figma Sticker Sheet',
-        description: `View our library of pre-built Material and Brightlayer UI Figma components to jump start your project design process.`,
-        image: figma,
-        path: 'https://www.figma.com/community/file/1024360297793425107',
     },
     {
         title: 'Component APIs',

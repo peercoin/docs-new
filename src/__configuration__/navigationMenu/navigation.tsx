@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Docs from '../../docs';
-import { MarkdownPage, DevResources, Roadmap } from '../../app/pages';
+import { MarkdownPage, Roadmap } from '../../app/pages';
 
 export type SimpleNavItem = {
     title: string;
@@ -215,20 +215,6 @@ export const pageDefinitions: SimpleNavItem[] = [
         ],
     },
     {
-        title: 'Workflows',
-        url: '/workflows',
-        hidden: true,
-        pages: [
-            {
-                title: 'Device Commissioning',
-                url: '/device-commissioning',
-                component: (
-                    <MarkdownPage title={'Device Commissioning'} markdown={Docs.Workflows.DeviceCommissioning} />
-                ),
-            },
-        ],
-    },
-    {
         title: 'Style Guide',
         url: '/style',
         component: <MarkdownPage title={'Style Guide'} markdown={Docs.Style.Home} />,
@@ -273,11 +259,6 @@ export const pageDefinitions: SimpleNavItem[] = [
                 component: <MarkdownPage title={'Licensing'} markdown={Docs.Community.License} />,
             },
             {
-                title: 'Innersourcing',
-                url: '/innersourcing',
-                component: <MarkdownPage title={'Innersourcing'} markdown={Docs.Community.Innersourcing} />,
-            },
-            {
                 title: 'Report Bugs',
                 url: '/bugs',
                 component: <MarkdownPage title={'Report Bugs'} markdown={Docs.Community.Bugs} />,
@@ -293,30 +274,9 @@ export const pageDefinitions: SimpleNavItem[] = [
                 component: <MarkdownPage title={'FAQ'} markdown={Docs.Community.FAQ} />,
             },
             {
-                title: 'Our Team',
-                url: '/our-team',
-                component: <MarkdownPage title={'Our Team'} markdown={Docs.Community.OurTeam} background={'dark'} />,
-            },
-            {
                 title: 'Contact Us',
                 url: '/contactus',
                 component: <MarkdownPage title={'Contact Us'} markdown={Docs.Community.Contact} />,
-            },
-        ],
-    },
-    {
-        title: 'Resources',
-        url: '/resources',
-        pages: [
-            {
-                title: 'Developer Resources',
-                url: '/developer',
-                component: <DevResources />,
-            },
-            {
-                title: 'Designer Resources',
-                url: '/designer',
-                component: <MarkdownPage title={'Designer Resources'} markdown={Docs.Resources.DesignerResources} />,
             },
         ],
     },
