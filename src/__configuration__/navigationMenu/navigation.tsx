@@ -225,13 +225,6 @@ export const pageDefinitions: SimpleNavItem[] = [
                 component: <MarkdownPage title={'Color Palette'} markdown={Docs.Style.Color} />,
             },
             {
-                title: 'Iconography',
-                url: '/iconography',
-                component: (
-                    <MarkdownPage title={'Iconography'} markdown={Docs.Style.Iconography} background={'dark'} sidebar />
-                ),
-            },
-            {
                 title: 'Illustrations',
                 url: '/illustrations',
                 component: <MarkdownPage title={'Illustrations'} markdown={Docs.Style.Illustrations} />,

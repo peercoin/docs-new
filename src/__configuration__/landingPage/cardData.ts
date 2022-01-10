@@ -1,5 +1,4 @@
 import components from '../../../src/app/assets/card-images/components.png';
-import icons from '../../../src/app/assets/card-images/icons.png';
 import github from '../../../src/app/assets/card-images/github.png';
 import resources from '../../../src/app/assets/card-images/resources.png';
 import patterns from '../../../src/app/assets/card-images/patterns.svg';
@@ -13,12 +12,6 @@ export const cardData = [
         description: `Learn more about Brightlayer UI style guidelines, including colors, themes, icons, typography, and more.`,
         image: style,
         path: '/style',
-    },
-    {
-        title: 'Icons',
-        description: `Browse the library of icons available in Brightlayer UI including Material icons as well as custom ones for Brightlayer UI applications.`,
-        image: icons,
-        path: '/style/iconography',
     },
     {
         title: 'Design Patterns',
