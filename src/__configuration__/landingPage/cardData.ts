@@ -3,16 +3,9 @@ import github from '../../../src/app/assets/card-images/github.png';
 import resources from '../../../src/app/assets/card-images/resources.png';
 import patterns from '../../../src/app/assets/card-images/patterns.svg';
 import community from '../../../src/app/assets/card-images/community.png';
-import style from '../../../src/app/assets/card-images/style.png';
 import roadmap from '../../../src/app/assets/card-images/roadmap.png';
 
 export const cardData = [
-    {
-        title: 'Style Guide',
-        description: `Learn more about Brightlayer UI style guidelines, including colors, themes, icons, typography, and more.`,
-        image: style,
-        path: '/style',
-    },
     {
         title: 'Design Patterns',
         description: `Learn about common interactions and designs found in Brightlayer UI applications.`,
@@ -39,7 +32,7 @@ export const cardData = [
     },
     {
         title: 'Community',
-        description: `Learn how to join the Brightlayer UI community by innersourcing, requesting features, etc.`,
+        description: `Learn how to join the V Systems developer community by reporting bugs, requesting features, etc.`,
         image: community,
         path: '/community',
     },

@@ -5,6 +5,5 @@ import Features from './features.mdx';
 import License from './license.mdx';
 import Home from './home.mdx';
 import Attributions from './attributions.mdx';
-import Rebrand from './rebrand.mdx';
 
-export { Bugs, Contact, FAQ, Features, License, Home, Attributions, Rebrand };
+export { Bugs, Contact, FAQ, Features, License, Home, Attributions };

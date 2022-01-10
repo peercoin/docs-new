@@ -215,33 +215,6 @@ export const pageDefinitions: SimpleNavItem[] = [
         ],
     },
     {
-        title: 'Style Guide',
-        url: '/style',
-        component: <MarkdownPage title={'Style Guide'} markdown={Docs.Style.Home} />,
-        pages: [
-            {
-                title: 'Color Palette',
-                url: '/color',
-                component: <MarkdownPage title={'Color Palette'} markdown={Docs.Style.Color} />,
-            },
-            {
-                title: 'Illustrations',
-                url: '/illustrations',
-                component: <MarkdownPage title={'Illustrations'} markdown={Docs.Style.Illustrations} />,
-            },
-            {
-                title: 'Typography',
-                url: '/typography',
-                component: <MarkdownPage title={'Typography'} markdown={Docs.Style.Typography} />,
-            },
-            {
-                title: 'Themes',
-                url: '/themes',
-                component: <MarkdownPage title={'Themes'} markdown={Docs.Style.Themes} />,
-            },
-        ],
-    },
-    {
         title: 'Community',
         url: '/community',
         component: <MarkdownPage title={'Brightlayer UI Community'} markdown={Docs.Community.Home} />,
@@ -283,12 +256,6 @@ export const pageDefinitions: SimpleNavItem[] = [
         url: '/attributions',
         hidden: true,
         component: <MarkdownPage title={'Attributions'} markdown={Docs.Community.Attributions} />,
-    },
-    {
-        title: 'Brightlayer UI ',
-        url: '/brightlayer-ui-rebrand',
-        hidden: true,
-        component: <MarkdownPage title={'Brightlayer UI Rebrand'} markdown={Docs.Community.Rebrand} />,
     },
 ];
 
