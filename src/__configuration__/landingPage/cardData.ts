@@ -13,16 +13,16 @@ export const cardData = [
         path: '/patterns',
     },
     {
-        title: 'Component APIs',
-        description: `Check out our libraries of pre-built JavaScript components that accelerate your application development.`,
+        title: 'SDKs',
+        description: `Check out our libraries that can accelerate your application development.`,
         image: components,
-        path: 'https://brightlayer-ui-components.github.io',
+        path: '/sdk',
     },
     {
         title: 'Development Resources',
-        description: `Have a look at all of the code examples and packages available from Brightlayer UI. We're constantly updating and adding new materials.`,
+        description: `Have a look at all of the code examples and packages available. We're constantly updating and adding new materials.`,
         image: resources,
-        path: '/resources/developer',
+        path: '/get-started',
     },
     {
         title: 'GitHub',
