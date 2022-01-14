@@ -58,10 +58,10 @@ export const SharedToolbar = (props: SharedToolbarProps): JSX.Element => {
     const isLandingPage = history.location.pathname === '/';
     const drawerOpen = useSelector((state: AppState) => state.app.drawerOpen);
     const sidebarOpen = useSelector((state: AppState) => state.app.sidebarOpen);
-    const showBanner = useSelector((state: AppState) => state.app.showBanner);
+    // const showBanner = useSelector((state: AppState) => state.app.showBanner);
     const sm = useMediaQuery(theme.breakpoints.down('sm'));
     const dispatch = useDispatch();
-    const appBarBackground = getScheduledSiteConfig().appBarBackground;
+    // const appBarBackground = getScheduledSiteConfig().appBarBackground;
     const getIsFireworkHoliday = (): boolean => {
         const holidayClassName = getScheduledSiteConfig().className || '';
         const fireworkHolidays = ['independence-day'];
@@ -125,7 +125,7 @@ export const SharedToolbar = (props: SharedToolbarProps): JSX.Element => {
     return (
         <>
             <AppBar
-                position="sticky"
+                position="fixed"
                 color={color}
                 elevation={0}
                 style={{
@@ -133,8 +133,6 @@ export const SharedToolbar = (props: SharedToolbarProps): JSX.Element => {
                     width: `calc(100% - ${sidebarOpen ? (sm ? 0 : 350) : 0}px)`,
                     right: sidebarOpen ? (sm ? 0 : 350) : 0,
                     transition: `width ${theme.transitions.duration.standard} ${theme.transitions.easing.easeInOut}`,
-                    top: showBanner ? theme.spacing(sm ? 7 : 8) : 0,
-                    ...appBarBackground,
                 }}
                 {...other}
             >
@@ -165,7 +163,7 @@ export const SharedToolbar = (props: SharedToolbarProps): JSX.Element => {
                         />
                     ) : (
                         <Typography>
-                            Brightlayer <b>User Interface</b>
+                            V Systems <b>Documentation</b>
                         </Typography>
                     )}
                     <Spacer />
