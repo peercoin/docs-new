@@ -12,7 +12,7 @@ import { PxblueSmall } from '@brightlayer-ui/icons-mui';
 import color from 'color';
 
 import { pageDefinitions, SimpleNavItem } from '../../__configuration__/navigationMenu/navigation';
-import { EatonTagline } from '../assets/icons';
+import { Vsys } from '../assets/icons';
 import { Typography, useTheme, useMediaQuery } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../redux/reducers';
@@ -123,7 +123,7 @@ export const NavigationDrawer = (): JSX.Element => {
                             dispatch({ type: TOGGLE_DRAWER, payload: false });
                         }}
                     >
-                        <Typography>Brightlayer UI</Typography>
+                        <Typography>V Systems Docs</Typography>
                     </div>
                 }
             />
@@ -140,10 +140,10 @@ export const NavigationDrawer = (): JSX.Element => {
                         cursor: 'pointer',
                     }}
                     onClick={(): void => {
-                        window.open('https://eaton.com', 'blank');
+                        window.open('https://www.v.systems', 'blank');
                     }}
                 >
-                    <EatonTagline style={{ fontSize: 150, height: 48 }} />
+                    <Vsys />
                 </div>
             </DrawerFooter>
         </Drawer>

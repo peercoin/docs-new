@@ -4,8 +4,7 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 
 import * as Colors from '@brightlayer-ui/colors';
 import { NavLink } from './NavLink';
-import { Eaton } from '../../assets/icons';
-import { SmallPXBLogo } from '../../assets/icons/PXBLogo';
+import { VsysWhite } from '../../assets/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -53,11 +52,9 @@ export const FooterLinks: React.FC = (): JSX.Element => {
             {/* Section 1: Brightlayer UI description */}
             <div style={{ flex: '1 1 0px', padding: padding, minWidth: xxs ? '100%' : '' }}>
                 <div style={{ minWidth: xxs ? '100%' : 300 }}>
-                    <SmallPXBLogo />
+                    <VsysWhite />
                     <Typography variant={'caption'} display={'block'} style={{ marginTop: theme.spacing(2) }}>
-                        Brightlayer UI is a complete design system for front-end development. This system will help your
-                        team build beautiful applications that adhere to our design guidelines while ensuring
-                        flexibility and code reusability.
+                        V Systems is a blockchain infrastructure provider with a focus on database and cloud services. Led by Chief Architect Sunny King, the V Systems blockchain aims to create a secure underlying infrastructure platform for blockchain database through his new innovation - Supernode Proof of Stake (SPoS) consensus algorithm. 
                     </Typography>
                 </div>
             </div>
@@ -120,45 +117,6 @@ export const FooterLinks: React.FC = (): JSX.Element => {
 
             {!singleColumn && <div className={classes.divider} />}
 
-            {/* Section 3: Contact Us */}
-            <div
-                style={{
-                    flex: '1 1 0px',
-                    minWidth: singleColumn ? '100%' : 250,
-                    padding: padding,
-                    color: Colors.white[100],
-                }}
-            >
-                {/* <Typography variant={'subtitle1'}>Connect with us</Typography> */}
-                <div style={{ color: Colors.white[500], marginTop: theme.spacing(1), textAlign: 'center' }}>
-                    <Eaton
-                        className={classes.socialIcon}
-                        style={{ fontSize: 120 }}
-                        onClick={(): void => {
-                            window.open('https://www.eaton.com', '_blank');
-                        }}
-                    />
-                    {/* <Dribbble
-                        style={{ margin: 0 }}
-                        className={classes.socialIcon}
-                        onClick={(): void => {
-                            window.open('https://dribbble.com', '_blank');
-                        }}
-                    />
-                    <GitHub
-                        className={classes.socialIcon}
-                        onClick={(): void => {
-                            window.open('https://github.com/brightlayer-ui', '_blank');
-                        }}
-                    />
-                    <NPM
-                        className={classes.socialIcon}
-                        onClick={(): void => {
-                            window.open('https://www.npmjs.com/~px-blue', '_blank');
-                        }}
-                    /> */}
-                </div>
-            </div>
         </div>
     );
 };
