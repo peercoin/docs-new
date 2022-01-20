@@ -1,6 +1,6 @@
 {
-    "name": "doc-it",
-    "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
+    "name": "v-systems-docs",
+    "author": "V Systems developers",
     "version": "2.4.2",
     "private": true,
     "scripts": {
