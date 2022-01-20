@@ -12,9 +12,9 @@ jobs:
           yarn install
           yarn build
       
-      - name: Verify Markdown Hyperlinks
-        run: |
-          yarn check:links-ci
+      #- name: Verify Markdown Hyperlinks
+      #  run: |
+      #    yarn check:links-ci
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.2
