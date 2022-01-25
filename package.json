@@ -1,7 +1,8 @@
 {
     "name": "v-systems-docs",
     "author": "V Systems developers",
-    "version": "2.4.2",
+    "version": "0.1",
+    "homepage": ".",
     "private": true,
     "scripts": {
         "start": "node scripts/start.js",
