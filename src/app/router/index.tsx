@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { LandingPage } from '../pages';
 import { DrawerLayout } from '@brightlayer-ui/react-components';
-import { ContactFab, SharedToolbar } from '../components';
+import { SharedToolbar } from '../components';
 import { NavigationDrawer } from './navigationDrawer';
 import { AppState } from '../redux/reducers';
 import { Menu } from '@material-ui/icons';
@@ -129,7 +129,6 @@ export const MainRouter = (): JSX.Element => {
                         </>
                     </Route>
                 </Switch>
-                <ContactFab />
             </DrawerLayout>
         </Router>
     );

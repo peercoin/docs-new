@@ -1,5 +1,5 @@
 import React from 'react';
-import { Gavel, BugReport, EmojiObjects, QuestionAnswer, Group, Drafts, ImportExport } from '@material-ui/icons';
+import { Gavel, BugReport, EmojiObjects, QuestionAnswer, ImportExport } from '@material-ui/icons';
 import * as Colors from '@brightlayer-ui/colors';
 import * as BrandingColors from '@brightlayer-ui/colors-branding';
 
@@ -67,32 +67,6 @@ export const links = [
         ),
         background: {
             color: BrandingColors.pine[300],
-        },
-    },
-    {
-        title: 'Our Team',
-        url: '/community/our-team',
-        description: `Meet the people behind Brightlayer UI and learn what makes us tick.`,
-        image: (
-            <span style={{ fontSize: 120, color: 'white', display: 'flex' }}>
-                <Group fontSize={'inherit'} color={'inherit'} />
-            </span>
-        ),
-        background: {
-            color: Colors.blue[300],
-        },
-    },
-    {
-        title: 'Contact Us',
-        url: '/community/contactus',
-        description: `We love hearing from you! Feel free to contact us any time to talk about Brightlayer UI or your projects.`,
-        image: (
-            <span style={{ fontSize: 120, color: 'white', display: 'flex' }}>
-                <Drafts fontSize={'inherit'} color={'inherit'} />
-            </span>
-        ),
-        background: {
-            color: Colors.purple[300],
         },
     },
 ];
