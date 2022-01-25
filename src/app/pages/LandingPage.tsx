@@ -41,9 +41,11 @@ const useStyles = makeStyles((theme: Theme) =>
             flexDirection: 'column',
             alignItems: 'center',
             padding: `${theme.spacing(8)}px ${theme.spacing(4)}px`,
+            marginTop: 50,
             width: '100%',
-            color: theme.palette.primary.contrastText,
-            backgroundColor: theme.palette.primary.main,
+            minHeight: 300,
+            color: '#231815',
+            backgroundColor: '#FF8232',
             backgroundSize: 'cover',
             backgroundPosition: '-240px center',
         },
@@ -94,7 +96,7 @@ export const LandingPage: React.FC = (): JSX.Element => {
                     GET STARTED
                 </Button>
             </div>
-            <LandingSection title={'Design and Development'} align={'left'} background={'light'}>
+            <LandingSection title={'V Systems Development'} align={'left'} background={'light'}>
                 <Grid container spacing={6} style={{ marginTop: theme.spacing(2) }}>
                     {cardData.map((item, ind) => (
                         <Grid key={`grid${ind}`} item xs={12} sm={6} md={4}>
@@ -120,7 +122,7 @@ export const LandingPage: React.FC = (): JSX.Element => {
                     backgroundImage={designImage}
                     title={'Getting started as a designer'}
                     description={
-                        'We offer many resources and assets for designers getting acquainted with Brightlayer UI.'
+                        'We have prepared numerous resources for the V Systems protocol.'
                     }
                     icon={<DesignIcon fontSize={'large'} />}
                     onClick={(): void => history.push('/design/intro')}
@@ -129,10 +131,10 @@ export const LandingPage: React.FC = (): JSX.Element => {
                     backgroundImage={developImage}
                     title={'Getting started as a developer'}
                     description={
-                        'We have numerous guides and resources to prepare you for working with Brightlayer UI.'
+                        'We have prepared numerous resources for the V Systems protocol.'
                     }
                     icon={<DeveloperMode fontSize={'large'} />}
-                    onClick={(): void => history.push('/development/environment')}
+                    onClick={(): void => history.push('/get-started/where-to-begin')}
                 />
             </CardCarousel>
 

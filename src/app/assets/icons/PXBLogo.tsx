@@ -31,12 +31,11 @@ export const PXBlueSVG: React.FC<PXBlueSVGProps> = (props) => {
     );
 };
 
-export const PXBLogo: React.FC<PXBLogoProps> = ({ tagline, color }) => {
+export const PXBLogo: React.FC<PXBLogoProps> = ({ tagline }) => {
     const theme = useTheme();
 
     return (
         <div style={{ textAlign: 'center', position: 'relative' }}>
-            <PXBlueSVG className={'rotateMe'} size={82} color={color || theme.palette.primary.contrastText} />
             <Typography variant={'h3'} align={'center'} style={{ fontWeight: 300, marginBottom: theme.spacing() }}>
                 V Systems <b>Documentation</b>
             </Typography>
