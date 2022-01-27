@@ -15,7 +15,7 @@ export const cardData = [
         title: 'SDKs',
         description: `Check out our libraries that can accelerate your application development.`,
         image: components,
-        path: '/sdk',
+        path: 'https://github.com/virtualeconomy/py-v-sdk',
     },
     {
         title: 'Development Resources',
@@ -33,6 +33,6 @@ export const cardData = [
         title: 'Community',
         description: `Learn how to join the V Systems developer community by reporting bugs, requesting features, etc.`,
         image: community,
-        path: '/community',
+        path: 'https://discord.gg/7s6RrCAZ',
     },
 ];
