@@ -66,37 +66,25 @@ export const FooterLinks: React.FC = (): JSX.Element => {
                 <div style={{ width: xxs ? '100%' : 550, columnCount: xxs ? 1 : 3, columnGap: padding }}>
                     <NavLink
                         to={'/overview'}
-                        title={'What is Brightlayer UI?'}
+                        title={'What is V Systems?'}
                         className={classes.navLink}
                         hoverColor={Colors.white[50]}
                     />
                     <NavLink
-                        to={'/design/intro'}
-                        title={'For Designers'}
+                        to={'/get-started/vsys-stack'}
+                        title={'VSYS Stack'}
                         className={classes.navLink}
                         hoverColor={Colors.white[50]}
                     />
                     <NavLink
-                        to={'/development/environment'}
+                        to={'/get-started/where-to-begin'}
                         title={'For Developers'}
                         className={classes.navLink}
                         hoverColor={Colors.white[50]}
                     />
                     <NavLink
-                        to={'/patterns'}
-                        title={'Design Patterns'}
-                        className={classes.navLink}
-                        hoverColor={Colors.white[50]}
-                    />
-                    <NavLink
-                        to={'https://brightlayer-ui-components.github.io/'}
-                        title={'Component Libraries'}
-                        className={classes.navLink}
-                        hoverColor={Colors.white[50]}
-                    />
-                    <NavLink
-                        to={'/attributions'}
-                        title={'Image Attributions'}
+                        to={'/development/environment'}
+                        title={'Environment Setup'}
                         className={classes.navLink}
                         hoverColor={Colors.white[50]}
                     />
@@ -107,8 +95,8 @@ export const FooterLinks: React.FC = (): JSX.Element => {
                         hoverColor={Colors.white[50]}
                     />
                     <NavLink
-                        to={'/roadmap'}
-                        title={'Roadmap'}
+                        to={'https://www.v.systems/'}
+                        title={'Official Website'}
                         className={classes.navLink}
                         hoverColor={Colors.white[50]}
                     />

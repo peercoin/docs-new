@@ -10,11 +10,19 @@ body {
     padding: 0;
 }
 
+a {
+    color: #ff8837 !important;
+}
+
+.headline-text {
+    font-weight: 600 !important;
+}
+
 blockquote,
 q {
     quotes: none;
-    border-left: 6px #007bc1 solid;
-    background: rgba(0, 123, 193, 0.1);
+    border-left: 6px #ff8837 solid !important;
+    background: rgba(255, 136, 55, 0.1) !important;
     margin: 0px;
     margin-bottom: 1rem;
     padding-left: 16px;
@@ -28,6 +36,10 @@ q:before,
 q:after {
     content: '';
     content: none;
+}
+
+mark {
+    background-color: #eef0f0; /* gray[50] */  
 }
 
 #search-bar input {
@@ -61,9 +73,26 @@ p.MuiTypography-h5.MuiTypography-paragraph {
     clear: both;
 }
 
+.MuiToolbar-root {
+    background: #231815 !important;
+}
+
+.MuiToolbar-root .MuiTypography-root {
+    color: #e8eaea !important;
+    font-weight: bold;
+}
+
+.MuiInputBase-root {
+    color: #ffffff !important; 
+}
+
 .rotateMe {
     animation: 2500ms spin linear infinite;
 }
+
+table, th, td {
+    border: 1px solid #eef0f0;;
+  }
 
 @keyframes spin {
     100% {

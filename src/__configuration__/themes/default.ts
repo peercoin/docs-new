@@ -21,6 +21,9 @@ export const defaultTheme: SiteConfig = {
                     color: Colors.white[200],
                     backgroundColor: '#231815',
                 },
+                body1: {
+                    color: Colors.white[500],
+                }
             },
             MuiBackdrop: {
                 root: {
@@ -31,7 +34,25 @@ export const defaultTheme: SiteConfig = {
                 outlined: {},
                 outlinedPrimary: {},
             },
-            MuiDrawer: {
+            MuiTypography: {
+                colorPrimary: {
+                    color: '#ff8837',
+                },
+                h1: {
+                    fontWeight: 600,
+                },
+                h2: {
+                    fontWeight: 600,
+                },
+                h3: {
+                    fontWeight: 500,
+                },
+                h4: {
+                    fontWeight: 500,
+                },
+                body1: {
+                    color: Colors.black[500],
+                }
             },
             MuiTabs: {
                 indicator: {

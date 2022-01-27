@@ -150,8 +150,8 @@ export const pageDefinitions: SimpleNavItem[] = [
         pages: [
             {
                 title: 'Testnet Explorer',
-                url: '/designer',
-                component: <MarkdownPage title={'Testing'} markdown={Docs.Development.Testing} />,
+                url: '/testing',
+                component: <MarkdownPage title={'Testing Environment'} markdown={Docs.Development.Testing} />,
             },
         ],
     },
