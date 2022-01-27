@@ -2,7 +2,7 @@
     "name": "v-systems-docs",
     "author": "V Systems developers",
     "version": "0.1",
-    "homepage": "https://virtualeconomy.github.io/docs/",
+    "homepage": "https://virtualeconomy.github.io/",
     "private": true,
     "scripts": {
         "start": "node scripts/start.js",
