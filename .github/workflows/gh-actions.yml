@@ -16,6 +16,10 @@ jobs:
       #  run: |
       #    yarn check:links-ci
 
+      - name: Run indexer
+        run: |
+          yarn indexer
+      
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.2
         with:
