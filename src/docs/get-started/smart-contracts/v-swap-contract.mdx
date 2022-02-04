@@ -1,7 +1,43 @@
+import "katex/dist/katex.min.css";
+import { InlineMath, BlockMath } from "react-katex";
+import vswapFlow from "./v_swap_flow.png";
+
 <!-- KEYWORDS: V Swap Contract Smart Contract -->
 
 # V Swap Contract
 
 ## Introduction
 
-V Swap Contract Documentation coming soon.
+V Swap is an automated market making protocol. Prices are regulated by a constant product formula, and requires no action from the liquidity provider to maintain prices.
+
+The contract allows completely decentralised exchanges to be formed, and allows anyone to be a liquidity provider as long as they have tokens on both sides of the swap.
+
+
+## Implementation
+
+The liquidity provided is tracked by a token called the liquidity token. The pool will give liquidity tokens according to the proportion of liquidity provided. These liquidity tokens should first be registered and completely issued before the liquidity pool is created.
+
+The user who first creates the pool decides on an initial ratio, and the pool will create:
+
+
+
+number of liquidity tokens and give it to the liquidity provider.
+
+Where x is the number of base tokens initially placed into the pool
+
+And y is the number of target tokens initially placed into the pool
+
+Subsequent liquidity providers will obtain liquidity tokens equal to
+
+
+
+
+Where a is the number of base tokens stored to the pool
+
+And b is the number of target tokens stored to the pool
+
+A flow chart of the V Swap Contract is as follows:
+
+
+
+The price of the swap is dependent on how many tokens are within the pool. By using an invariant, the price can be regulated automatically without the liquidity provider constantly updating the price.

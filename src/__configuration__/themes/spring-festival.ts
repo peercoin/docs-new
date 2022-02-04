@@ -2,7 +2,6 @@ import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import * as Colors from '@brightlayer-ui/colors';
 import banner from '../../app/assets/themes/spring-festival/banner.svg';
 import cursor from '../../app/assets/themes/spring-festival/cursor.png';
-import titleBlock from '../../app/assets/themes/spring-festival/title-block.svg';
 import AppBarTile from '../../app/assets/themes/spring-festival/tile.svg';
 import { Schedule } from './types';
 
@@ -61,7 +60,6 @@ export const SpringFestivalSchedule: Schedule = {
         },
         className: 'spring-festival',
         customBannerText: {
-            backgroundImage: `url(${titleBlock})`,
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',

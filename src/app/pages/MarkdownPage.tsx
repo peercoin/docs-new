@@ -17,6 +17,7 @@ export type MarkdownPageProps = HTMLAttributes<HTMLDivElement> & {
     sidebar?: boolean;
 };
 
+
 export const MarkdownPage: React.FC<MarkdownPageProps> = (props): JSX.Element => {
     const { title, markdown: Markdown, noPadding, background, wideLayout, sidebar, ...divProps } = props;
     usePageTitle(title);

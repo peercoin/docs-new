@@ -1,32 +1,74 @@
 {
-    "title": "Brightlayer UI | Powering Teams to Make What Matters*",
+    "title": "V Systems Blockchain | The Blockchain for Real World Applications*",
     "url": "",
     "hasLandingPage": true,
     "pages": [
         {
-            "title": "What is Brightlayer UI?",
+            "title": "What is V Systems?",
             "url": "/overview"
         },
         {
-            "title": "Starting a Project",
+            "title": "Get Started",
             "url": "/get-started",
             "pages": [
                 {
+                    "title": "V Systems Stack",
+                    "url": "/vsys-stack"
+                },
+                {
                     "title": "Where to Begin?",
-                    "url": "/new-project"
+                    "url": "/where-to-begin"
                 },
                 {
-                    "title": "Web Apps",
-                    "url": "/web"
+                    "title": "Quick Tutorials",
+                    "url": "/quick-tutorials"
                 },
                 {
-                    "title": "Mobile Apps",
-                    "url": "/mobile"
+                    "title": "Smart Contracts",
+                    "url": "/smart-contracts",
+                    "pages": [
+                        {
+                            "title": "Token Contract",
+                            "url": "/token-contract"
+                        },
+                        {
+                            "title": "Lock Contract",
+                            "url": "/lock-contract"
+                        },
+                        {
+                            "title": "NFT Contract",
+                            "url": "/nft-contract"
+                        },
+                        {
+                            "title": "Payment Contract",
+                            "url": "/payment-contract"
+                        },
+                        {
+                            "title": "V Swap Contract",
+                            "url": "/v-swap"
+                        },
+                        {
+                            "title": "V Atomic Swap Contract",
+                            "url": "/v-atomic-swap"
+                        },
+                        {
+                            "title": "V Stable Swap Contract",
+                            "url": "/v-stable-swap"
+                        },
+                        {
+                            "title": "V Option Contract",
+                            "url": "/v-option"
+                        },
+                        {
+                            "title": "V Escrow Contract",
+                            "url": "/v-escrow"
+                        }
+                    ]
                 }
             ]
         },
         {
-            "title": "Developing w/ Brightlayer UI",
+            "title": "API References",
             "url": "/development",
             "pages": [
                 {
@@ -38,135 +80,8 @@
                     "url": "/cli"
                 },
                 {
-                    "title": "Web Frameworks",
-                    "url": "/frameworks-web",
-                    "pages": [
-                        {
-                            "title": "Introduction",
-                            "url": "/intro"
-                        },
-                        {
-                            "title": "Angular Guide",
-                            "url": "/angular"
-                        },
-                        {
-                            "title": "React Guide",
-                            "url": "/react"
-                        }
-                    ]
-                },
-                {
-                    "title": "Mobile Frameworks",
-                    "url": "/frameworks-mobile",
-                    "pages": [
-                        {
-                            "title": "Introduction",
-                            "url": "/intro"
-                        },
-                        {
-                            "hidden": true,
-                            "title": "Apache Cordova Guide",
-                            "url": "/cordova"
-                        },
-                        {
-                            "title": "Ionic Guide",
-                            "url": "/ionic"
-                        },
-                        {
-                            "title": "React Native Guide",
-                            "url": "/react-native"
-                        }
-                    ]
-                },
-                {
                     "title": "Testing",
                     "url": "/testing"
-                }
-            ]
-        },
-        {
-            "title": "Designing w/ Brightlayer UI",
-            "url": "/design",
-            "pages": [
-                {
-                    "title": "Introduction",
-                    "url": "/intro"
-                },
-                {
-                    "title": "Design System Anatomy",
-                    "url": "/anatomy"
-                },
-                {
-                    "title": "Accessibility",
-                    "url": "/accessibility"
-                },
-                {
-                    "title": "Websites",
-                    "url": "/websites"
-                },
-                {
-                    "title": "Project Identity",
-                    "url": "/project-identity"
-                }
-            ]
-        },
-        {
-            "title": "Design Patterns",
-            "url": "/patterns",
-            "hasLandingPage": true,
-            "pages": [
-                {
-                    "title": "Account Menu",
-                    "url": "/account-menu"
-                },
-                {
-                    "title": "App Bars",
-                    "url": "/appbar"
-                },
-                {
-                    "title": "Empty States",
-                    "url": "/empty-states"
-                },
-                {
-                    "title": "Forms and Validation",
-                    "url": "/forms"
-                },
-                {
-                    "title": "Internationalization",
-                    "url": "/internationalization"
-                },
-                {
-                    "title": "Lists & Tables",
-                    "url": "/lists"
-                },
-                {
-                    "title": "Loading & Waiting",
-                    "url": "/loading"
-                },
-                {
-                    "title": "Navigation",
-                    "url": "/navigation"
-                },
-                {
-                    "title": "Overlays",
-                    "url": "/overlay"
-                },
-                {
-                    "title": "Page Layout",
-                    "url": "/layout",
-                    "hidden": true
-                },
-                {
-                    "title": "Steppers",
-                    "url": "/steppers"
-                },
-                {
-                    "title": "User Authentication",
-                    "url": "/user-auth"
-                },
-                {
-                    "title": "Visualizations",
-                    "url": "/visualizations"
                 }
             ]
         },
@@ -174,92 +89,16 @@
             "title": "Workflows",
             "url": "/workflows",
             "hidden": true,
-            "pages": [
-                {
-                    "title": "Device Commissioning",
-                    "url": "device-commissioning"
-                }
-            ]
         },
         {
-            "title": "Style Guide",
-            "url": "/style",
-            "hasLandingPage": true,
-            "pages": [
-                {
-                    "title": "Color Palette",
-                    "url": "/color"
-                },
-                {
-                    "title": "Iconography",
-                    "url": "/iconography"
-                },
-                {
-                    "title": "Illustrations",
-                    "url": "/illustrations"
-                },
-                {
-                    "title": "Typography",
-                    "url": "/typography"
-                },
-                {
-                    "title": "Themes",
-                    "url": "/themes"
-                }
-            ]
-        },
-        {
-            "title": "Community",
-            "url": "/community",
-            "hasLandingPage": true,
-            "pages": [
-                {
-                    "title": "Licensing",
-                    "url": "/license"
-                },
-                {
-                    "title": "Innersourcing",
-                    "url": "/innersourcing"
-                },
-                {
-                    "title": "Report Bugs",
-                    "url": "/bugs"
-                },
-                {
-                    "title": "Request Features",
-                    "url": "/features"
-                },
-                {
-                    "title": "FAQ",
-                    "url": "/faq"
-                }
-            ]
-        },
-        {
-            "title": "Resources",
+            "title": "Tools",
             "url": "/resources",
             "pages": [
                 {
                     "title": "Developer Resources",
                     "url": "/developer"
-                },
-                {
-                    "title": "Designer Resources",
-                    "url": "/designer"
                 }
             ]
-        },
-        {
-            "title": "Roadmap",
-            "url": "/roadmap"
-        },
-        {
-            "title": "Release Notes",
-            "url": "/release-notes"
-        },
-        {
-            "title": "Attributions",
-            "url": "/attributions"
         }
     ]
 }

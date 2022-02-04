@@ -7,19 +7,38 @@ import { SiteConfig } from './types';
 export const defaultTheme: SiteConfig = {
     theme: {
         ...BLUIThemes.blue,
+        palette: {
+            ...BLUIThemes.blue.palette,
+            type: 'light',
+            primary: {
+                light: Colors.orange[500],
+                main: Colors.orange[500],
+                dark: Colors.orange[500],
+            },
+            secondary: {
+                main: Colors.yellow[500],
+            },
+        },
         overrides: {
             MuiAppBar: {
-                colorDefault: {
-                    color: Colors.white[50],
-                    backgroundColor: '#231815',
-                },
+                ...BLUIThemes.blue.overrides?.MuiAppBar,
                 colorPrimary: {
-                    color: Colors.black[50],
-                    backgroundColor: '#231815',
+                    backgroundColor: Colors.orange[500],
+                    color: Colors.white[50],
                 },
                 colorSecondary: {
-                    color: Colors.white[200],
-                    backgroundColor: '#231815',
+                    backgroundColor: Colors.orange[500],
+                    color: Colors.white[50],
+                    '& .MuiInputBase-root': {
+                        color: Colors.white[50],
+                    },
+                    '& .MuiSelect-icon': {
+                        color: Colors.white[50],
+                    },
+                },
+                colorDefault: {
+                    color: Colors.white[50],
+                    backgroundColor: Colors.orange[500],
                 },
                 body1: {
                     color: Colors.white[500],
