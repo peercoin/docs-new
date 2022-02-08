@@ -4,5 +4,42 @@
 
 ## Introduction
 
-V Stable Swap Contract documentation coming soon.
+Creating orders requires the order creator to decide on the price of both sides of the trade and also the fee charged. The fees for the V Stable Swap contract is a set fee and is not calculated as a percentage. The order creator also decides on a maximum and a minimum for each swap, setting the maximum allows the order creator to be sure that they get enough fees for providing liquidity, while setting the minimum ensures the fee does not overwhelm any trades.
+
+## Using the VSYS Python API Wrapper pyvsystems
+
+To generate and broadcast transactions, we can use pyvsystems to test contract functionalities on vsys chain.
+
+### Install Pyvsystems
+
+```
+git clone https://github.com/virtualeconomy/pyvsystems.git
+```
+
+Then using pip, we can install the repository as a package
+
+```
+pip3 install pyvsystems/.
+```
+
+Then we can simply import <mark>pyvsystems</mark> in your own workplace.
+
+
+### Register a V Stable Swap contract
+
+**Initialize API Connection**
+
+```
+import pyvsystems as pv
+from pyvsystems import Account
+from pyvsystems.contract import token_id_from_contract_id
+from pyvsystems.contract_helper import *
+
+custom_wrapper = pv.create_api_wrapper("<your_node_address>", api_key="<your_node_api_key (optional)>")
+# chain = pv.Chain(chain_name='mainnet', chain_id='M', address_version=5, api_wrapper=custom_wrapper)
+chain = pv.Chain(chain_name='devnet', chain_id='T', address_version=5, api_wrapper=custom_wrapper)
+sender = Account(chain=chain, seed="<your_sender_seed>")
+sender2 = Account(chain=chain, seed="<your_sender2_seed>")
+```
+
 

@@ -94,6 +94,11 @@ table, th, td {
     border: 1px solid #eef0f0;;
   }
 
+.katex, .katex .vlist-t2 {
+    margin-right: -2px;
+    font-size: 22px;
+}
+
 @keyframes spin {
     100% {
         -webkit-transform: rotate(360deg);
