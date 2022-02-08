@@ -76,10 +76,6 @@
                     "url": "/environment"
                 },
                 {
-                    "title": "Brightlayer UI CLI",
-                    "url": "/cli"
-                },
-                {
                     "title": "Testing",
                     "url": "/testing"
                 }
@@ -88,7 +84,7 @@
         {
             "title": "Workflows",
             "url": "/workflows",
-            "hidden": true,
+            "hidden": true
         },
         {
             "title": "Tools",
