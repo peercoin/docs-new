@@ -1,7 +1,437 @@
+import image001 from "./vOptionContract.png";
+
 <!-- KEYWORDS: V Option Smart Contract -->
 
 # V Option Contract
 
 ## Introduction
 
-V Option Contract coming soon.
+V Option Contract provides an opportunity for the interested parties to buy or sell a VSYS underlying asset based on the determined agreement(e.g., pre-determined price, execute timestamp and so on). It allows users to create option tokens on the VSYS blockchain, and buyers holding these option tokens have the right to buy or sell some underlying asset at some point in the future. Different from the traditional option market, everyone can buy or sell option tokens to join the option market at any time without any contractual relationship with an exchange.
+
+## Implementation
+
+When registering a V Option contract, it takes in base token, target token, option token and proof token as inputs. The option token owner has the right to decide whether execute the option contract to get the target tokens from the pool and proof token represents the percentage of ownership in the pool.
+
+<img style={{ width: '100%'}} src={image001} /><br/>
+
+**Initialisation Phase**
+
+Market maker requires to register both option token contract and proof token contract for use in V option contract first and ensure that option token and proof tokens are FULLY issued. And now, market maker can register a V Option contract by specifying the token ID of those 4 tokens. After that, tokens need to be deposited into V Option contract and it is neccesary to ensure that option tokens and proof tokens are FULLY desposited(i.e., token issue amount= token deposit amount). Finally, remember to activate the contract to deliver it to the next phase.
+
+
+**Participation Phase**
+
+Since V option contract is well-prepared in the previous phase, people who expect they can get the potential profit from selling option tokens can mint option tokens (and proof tokens) for selling purpose. Those option seller can also unlock the option tokens freely to get back target tokens from the pool before the execute timestamp.
+
+
+**Execution Phrase**
+
+After the execute timestamp, option holders have the right to execute V Option contract (with base tokens and option tokens) to get target tokens if they consider that the contract execution can bring them profit. They can also decide to give up the right to execute, in which case they will only lose the fees paid for the option tokens.
+
+
+**Terminated Phrase**
+
+After the execute deadline timestamp, proof token holder can collect their own crypto assets (base tokens/target tokens) from the pool according to their owned percentage of proof tokens.
+
+
+## Use Cases
+
+As mentioned in implementation, here is some uses cases to demonstrate how we operate V Option contract in these four phrases.
+
+**Selling Option Tokens**
+
+As the interested parties predict that the relative price of VBTC/VETH will drop after 3 months, they will mint the option token with VETH tokens(i.e., target tokens) for selling purpose and they become the option seller. Option sellers can take the option token to the exchange (i.e., stable swap contract) or through some Over-The-Counter (OTC) service, so the people who expect the price of VETH will rise after 3 months will be interested to buy the option tokens. If option sellers want to get back some target tokens or there is some remaining option tokens in the pool, they can unlock option token to get back VETH tokens before the execute timestamp.
+
+**Option Execution**
+
+After the execute timestamp determined in V Option contract, the option buyers (holders) have the right to buy VETH tokens at the strike price with the same amount of their owned option tokens if the price of VETH token is beneficial to them.
+
+**Collect Base/Target Tokens**
+
+Option sellers call collect function to get back VBTC tokens (and/or) VETH tokens based on the percentage of proof tokens proportional to the pool they own.
+
+
+## Using the VSYS Python API Wrapper pyvsystems
+
+To generate and broadcast transactions, we can use pyvsystems to test contract functionalities on vsys chain.
+
+### Install pyvsystems
+
+**pyvsystems** can be installed by first cloning the github repository.
+
+```python:
+git clone https://github.com/virtualeconomy/pyvsystems.git
+```
+
+Then using pip, we can install the repository as a package.
+
+```python:
+pip3 install pyvsystems/.
+```
+
+Now you can import pyvsystems in your own workplace.
+
+
+## Register a V Option Contract
+
+### Initialize API connection
+
+```
+import pyvsystems as pv
+from pyvsystems import Account
+from pyvsystems.contract import token_id_from_contract_id
+from pyvsystems.contract_helper import *
+
+custom_wrapper = pv.create_api_wrapper("<your_node_address>", api_key="<your_node_api_key (optional)>")
+# chain = pv.Chain(chain_name='mainnet', chain_id='M', address_version=5, api_wrapper=custom_wrapper)
+chain = pv.Chain(chain_name='testnet', chain_id='T', address_version=5, api_wrapper=custom_wrapper)
+sender = Account(chain=chain, seed="<your_sender_seed>")
+```
+
+### Register V Option contract
+
+V Option Contract ByteString:
+
+```
+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
+```
+
+### Insert TABLE
+
+```
+v_option_contract_helper = VOptionContractHelper()
+
+v_option_contract_object = v_option_contract_helper.contract_object
+
+register_v_option_data_stack = v_option_contract_helper.register_data_stack_generator('<base_token_id>', '<target_token_id>', '<option_token_id>', '<proof_token_id>', <execute_time>, <execute_deadline>)
+
+sender.register_contract(v_option_contract_object, register_v_option_data_stack)
+```
+
+### Using V Option Contract Functions
+
+### Insert TABLE
+
+
+
+**Supersede the Issuing Rights to Another Address**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+supersede_function_id = VOptionContractHelper.supersede_function_index
+
+supersede_data_stack = voption_contract_helper.supersede_data_stack_generator(new_owner.address)
+
+sender.execute_contract(v_option_contract_id, supersede_function_id, supersede_data_stack)
+
+```
+<br/>
+
+**Activate V Option contract**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+activate_function_id = VOptionContractHelper.activate_function_index
+
+activate_data_stack = voption_contract_helper.activate_data_stack_generator(<max_issue_num>, <price>, <price_unit>)
+
+sender.execute_contract(v_option_contract_id, activate_function_id, activate_data_stack)
+```
+<br/>
+
+
+**Mint the V Option Contract**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+mint_function_id = VOptionContractHelper.mint_function_index
+
+mint_data_stack = voption_contract_helper.mint_data_stack_generator(<amount>)
+
+sender.execute_contract(v_option_contract_id, mint_function_id, mint_data_stack)
+```
+<br/>
+
+
+**Unlock**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+unlock_function_id = VOptionContractHelper.unlock_function_index
+
+unlock_data_stack = voption_contract_helper.unlock_data_stack_generator(<amount>)
+
+sender.execute_contract(v_option_contract_id, unlock_function_id, unlock_data_stack)
+```
+<br/>
+
+**Execute**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+execute_function_id = VOptionContractHelper.execute_function_index
+
+execute_data_stack = voption_contract_helper.execute_data_stack_generator(<amount)
+
+sender.execute_contract(v_option_contract_id, execute_function_id, execute_data_stack)
+```
+<br/>
+
+
+**Collect**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+collect_function_id = VOptionContractHelper.collect_function_index
+
+collect_data_stack = voption_contract_helper.collect_data_stack_generator(<amount>)
+
+minter.execute_contract(v_option_contract_id, collect_function_id, collect_data_stack)
+```
+<br/>
+
+
+**Deposit the Token into a Contract**
+
+```
+token_V2_contract_id = "<your_token_V2_contract_id>"
+
+token_V2_contract_helper = TokenV2ContractHelper()
+
+deposit_function_id = TokenV2ContractHelper.deposit_function_index
+
+deposit_data_stack = token_V2_contract_helper.deposit_data_stack_generator(depositer.address,'<v_option_contract_id>',<amount>)
+
+print(depositer.execute_contract(token_V2_contract_id, deposit_function_id, deposit_data_stack))
+```
+<br/>
+
+**Withdraw the Token from a Contract**
+
+```
+token_V2_contract_id = "<your_token_V2_contract_id>"
+
+token_V2_contract_helper = TokenV2ContractHelper()
+
+withdraw_function_id = TokenV2ContractHelper.withdraw_function_index
+
+withdraw_data_stack = token_V2_contract_helper.withdraw_data_stack_generator('<v_option_contract_id>', withdrawer.address, <amount>)
+
+withdrawer.execute_contract(token_V2_contract_id, withdraw_function_id, withdraw_data_stack)
+```
+<br/>
+
+
+### Using V Option Contract Functions
+
+### Insert TABLE
+
+
+**Supersede the issuing rights to another address**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+supersede_function_id = VOptionContractHelper.supersede_function_index
+
+supersede_data_stack = voption_contract_helper.supersede_data_stack_generator(new_owner.address)
+
+sender.execute_contract(v_option_contract_id, supersede_function_id, supersede_data_stack)
+```
+<br/>
+
+
+**Activate V Option Contract**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+activate_function_id = VOptionContractHelper.activate_function_index
+
+activate_data_stack = voption_contract_helper.activate_data_stack_generator(<max_issue_num>, <price>, <price_unit>)
+
+sender.execute_contract(v_option_contract_id, activate_function_id, activate_data_stack)
+```
+<br/>
+
+**Mint the V Option Contract**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+mint_function_id = VOptionContractHelper.mint_function_index
+
+mint_data_stack = voption_contract_helper.mint_data_stack_generator(<amount>)
+
+sender.execute_contract(v_option_contract_id, mint_function_id, mint_data_stack)
+```
+<br/>
+
+**Unlock**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+unlock_function_id = VOptionContractHelper.unlock_function_index
+
+unlock_data_stack = voption_contract_helper.unlock_data_stack_generator(<amount>)
+
+sender.execute_contract(v_option_contract_id, unlock_function_id, unlock_data_stack)
+```
+<br/>
+
+**Execute**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+execute_function_id = VOptionContractHelper.execute_function_index
+
+execute_data_stack = voption_contract_helper.execute_data_stack_generator(<amount)
+
+sender.execute_contract(v_option_contract_id, execute_function_id, execute_data_stack)
+```
+<br/>
+
+**Collect**
+
+```
+v_option_contract_id = "<your_v_option_contract_id>"
+
+voption_contract_helper = VOptionContractHelper()
+
+collect_function_id = VOptionContractHelper.collect_function_index
+
+collect_data_stack = voption_contract_helper.collect_data_stack_generator(<amount>)
+
+minter.execute_contract(v_option_contract_id, collect_function_id, collect_data_stack)
+```
+<br/>
+
+**Deposit the token into a contract**
+
+```
+token_V2_contract_id = "<your_token_V2_contract_id>"
+
+token_V2_contract_helper = TokenV2ContractHelper()
+
+deposit_function_id = TokenV2ContractHelper.deposit_function_index
+
+deposit_data_stack = token_V2_contract_helper.deposit_data_stack_generator(depositer.address,'<v_option_contract_id>',<amount>)
+
+print(depositer.execute_contract(token_V2_contract_id, deposit_function_id, deposit_data_stack))
+```
+<br/>
+
+
+**Withdraw the token from a contract**
+
+```
+token_V2_contract_id = "<your_token_V2_contract_id>"
+
+token_V2_contract_helper = TokenV2ContractHelper()
+
+withdraw_function_id = TokenV2ContractHelper.withdraw_function_index
+
+withdraw_data_stack = token_V2_contract_helper.withdraw_data_stack_generator('<v_option_contract_id>', withdrawer.address, <amount>)
+
+withdrawer.execute_contract(token_V2_contract_id, withdraw_function_id, withdraw_data_stack)
+```
+<br/>
+
+
+### Querying the Contract Database
+
+In order for the contract to do anything, it has to store some information within the database. This information can be queried by using the correct database key within the full node. The contract helper objects contain the corresponding database keys for each stored variable.
+
+### Insert Tables
+
+### Insert Tables
+
+
+**Get the base token balance of the user in v option contract**
+
+```
+voption_contract_helper = VOptionContractHelper()
+
+v_option_contract_id = "<your_v_option_contract_id>"
+
+base_token_db_key = voption_contract_helper.base_token_balance_db_key_generator(<address>)
+
+print(chain.contract_db_query(v_option_contract_id, base_token_db_key))
+```
+<br/>
+
+
+**Get the target token balance of the user in v option contract**
+
+```
+voption_contract_helper = VOptionContractHelper()
+
+v_option_contract_id = "<your_v_option_contract_id>"
+
+target_token_db_key = voption_contract_helper.target_token_balance_db_key_generator(<address>)
+
+print(chain.contract_db_query(v_option_contract_id, target_token_db_key))
+```
+<br/>
+
+
+**Get the option token balance of the user in v option contract**
+
+```
+voption_contract_helper = VOptionContractHelper()
+
+v_option_contract_id = "<your_v_option_contract_id>"
+
+option_token_db_key = voption_contract_helper.option_token_balance_db_key_generator(<address>)
+
+print(chain.contract_db_query(v_option_contract_id, option_token_db_key))
+```
+<br/>
+
+
+**Get the proof token balance of the user in v option contract**
+
+```
+voption_contract_helper = VOptionContractHelper()
+
+v_option_contract_id = "<your_v_option_contract_id>"
+
+proof_token_db_key = voption_contract_helper.proof_token_balance_db_key_generator(<address>)
+
+print(chain.contract_db_query(v_option_contract_id, proof_token_db_key))
+```
+<br/>
+
+
+
+
