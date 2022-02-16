@@ -1,88 +1,188 @@
 import { Divider } from '../../app/components';
 
-<!-- KEYWORDS: developer develop environment guide tutorial -->
+<!-- KEYWORDS: Where to Begin Building on V Systems Blockchain -->
 
 # Setting up Your Development Environment
 
-Getting started is often the most frustrating part of application development. Fortunately, many of the modern JavaScript frameworks have made great strides in providing tools to get you up and running as quickly as possible. Below, we walk through the basics of getting your system set up to develop.
+In this documentation, we are going to run a dev net on your local machine with **2 nodes where one acts as a minter and the other acts as a normal peer.**
 
-## Integrated Development Environment (IDE)
+> VSYS uses the SPoS consensus mechanism where there are up to 60 nodes that act as supernodes(minter) and have the privilege to generate new blocks. Other nodes are normal peers in the net.
 
-There are a bunch of different IDEs on the market, and in general you should be able to use any of these that you like and are comfortable with. If you don't have a personal preference, we recommend trying [Visual Studio Code](https://code.visualstudio.com) - it is quite excellent and comes with a variety of tools to make your development experience seamless. And it's free!
+> There are 3 kinds of net as listed below: 
+-   Main net: the public production net where everything happens counts.
+- Test net: the public staging net that simulates the main net for testing purposes(e.g. QA test of DApps before deploying to the main net).
+- Dev net: the private local net for developing purposes(e.g. quickly verify features during developing)
 
-## Git
+<Divider/>
 
-Chances are, you probably want to keep your application in source control. Git is one of the big players in this space (it's also the backbone for BitBucket).
-
-You may already have git installed. To check, run:
-
-```sh
-git --version
-```
-
-in a command prompt. If you don't have git installed, you can download it from the [Git Website](http://git-scm.com/downloads).
-
-If you are behind a proxy, you'll also need to set up the git proxies as well:
-
-```sh
-git config --global http.proxy http://url.to.your.proxy:port
-git config --global https.proxy http://url.to.your.proxy:port
-```
-
-The proxy addresses may vary depending on your location. Consult your local IT department if you’re not sure.
-
-## Node
-
-The majority of JavaScript frameworks (and Brightlayer UI resources) are available via the Node Package Manager (NPM). This package manager allows you to install a variety of third party tools, packages, and other dependencies that you need for your applications. To use NPM, you will need to install [NodeJS](https://nodejs.org/en/download/).
-
-## Yarn
-
-Our projects and example code are set up to be run using yarn, but if you prefer, you're welcome to use NPM in your projects instead. Instructions for installing yarn on various operating systems can be found on the [Yarn Website](https://yarnpkg.com/en/docs/install).
-
-To check if you have yarn installed, run:
-
-```sh
-yarn -v
-```
-
-from a command prompt. If you are behind a proxy, you will also need to configure your proxy settings. It may be sufficient for you to set `HTTP_PROXY` and `HTTPS_PROXY` in your environment variables. However, you may need to also explicitly set proxy values for yarn:
-
-```sh
-yarn config set proxy http://url.to.your.proxy:port
-yarn config set https-proxy http://url.to.your.proxy:port
-```
-
-The proxy addresses may vary depending on your location. Consult your local IT department if you’re not sure. Once you have configured the proxy, you should be able to install packages by using:
-
-```sh
-yarn add <package-name>
-```
-
-> If you are installing packages globally using yarn, you will need to ensure that your PATH variable has an entry pointing to your global yarn install directory. This location will vary based on your operating system.
-
-<Divider />
-
-# Hybrid App Development
-
-If you are setting up for building a mobile app, there are some additional steps you will want to take to prepare. The following requirements are the basics. Depending on your selected [framework](/development/frameworks-mobile/intro), there will be other specific setup steps detailed in our Getting Started Guides.
-
+# Build Your Own V Systems Dev Net
 ## Prerequisites
 
-### Hardware
+Ensure that you have:
+- installed [Docker](https://www.docker.com/get-started) on your local machine
+- installed [Scala & sbt](https://docs.scala-lang.org/getting-started/index.html) on your local machine
 
-Mobile development is resource-intensive, so you will need a development machine that is up to the task. Your machine should at least match the following minimum requirements:
+## Generate TestNet Wallet
 
--   a Mac (if you plan on building or testing iOS locally)
--   16GB RAM or more (running multiple emulators can easily push you over 20GB)
--   Solid State Hard Drive (SSD)
--   5/6 Gen Core i7 with Virtualization Technology or better
+1. Git clone the v-wallet-generator repo & go to the root directory.
 
-### Software
+```python:
+git clone git@github.com:virtualeconomy/v-wallet-generator.git
+cd v-wallet-generator
+```
 
-There are a few software tools that you will need before you can get started:
+2. Enter sbt shell & run
+```python:
+$ sbt
+sbt:walletgenerator> run --testnet --count 10
+```
 
-<!-- markdown-link-check-disable -->
+Collect the output and save it as a file where you have something like below. We are going to need it later.
 
--   [Android Studio](https://developer.android.com/studio/) (required for building for Android)
-    <!-- markdown-link-check-enable -->
--   [xCode](https://developer.apple.com/xcode/) (Mac-only, required for building for iOS)
+```python:
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+IMPORTANT - COPY OR MEMORIZE THE SEED PHRASE BELOW FOR KEY RECOVERY!!!
+seed         : foam render square glide social breeze bamboo miracle quick depart wife gravity antique cry offer
+------------------------------------------------------------------------------------------------------------------------------------------------------
+address #    : 0
+address      : AU1kWYYThZCiSZC9qPifFpGAoxuut5p2ELv
+public key   : GdJMs3FiB3xBDm3P5a76aPM4sGm4NbkXVDUjm1YYFhDu
+private key  : Cu5EWAKKH4HHART8sKfxB1rKXBghG8uNL5dynw39mC5z
+account seed : Afqc3coMs5knqmwYnaSgYKqMeVVp487ShBg3hj3AuSZj
+------------------------------------------------------------------------------------------------------------------------------------------------------
+address #    : 1
+address      : AUAA4PxhoYWxhdAt5PbCvZArSnFeQytAWet
+public key   : AttEU9KBEQCfGawQ5i86wCFA4Uvy1qBWY5WdXm5A8uHd
+private key  : 4n32Erz3YGX9XCnFQACQAiRjA9oy8iNEN6pnnEziULBh
+account seed : 5FL5KhSrWdcG5dsAe2fTSASzuuoEAf25hmVZLXsX6ZUD
+------------------------------------------------------------------------------------------------------------------------------------------------------
+... (and more)
+```
+
+## Generate Gensis Block Data
+
+> A Genesis Block is the first block of the blockchain network. It has a list of initial accounts in it.
+
+1. Git clone the <mark>v-systems</mark> repo & go to the root directory.
+
+```python:
+git clone git@github.com:virtualeconomy/v-systems.git
+cd v-systems
+```
+
+2. Update the value <mark>wallet_addresses</mark> in <mark>src/test/scala/tools/DevelopnetGenesisBlockGenerator.scala</mark> with addresses generated in the last step.
+
+3. Run <mark>DevelopnetGenesisBlockGenerator.scala</mark> at the root of project <mark>v-systems</mark>
+
+```python:
+sbt "test:runMain tools.DevelopnetGenesisBlockGenerator"
+```
+
+Collect the output and save it as a file where you have something like below. We are going to need it later.
+
+```python:
+[info] GenesisSettings:
+[info]  timestamp: 1606373598254137883
+[info]  blockTimestamp: 1606373598254137883
+[info]  averageBlockDelay: 60 seconds
+[info]  initialBalance: 500000000000000000
+[info]  initialMintTime: 1606373598000000000
+[info]  signature: Some(3yzHvLWnzug8x5ut1M3fftbcy3aWgbYCmyYtSp2A3vLB6aAVvbDnHARfTcuzDygaEGE6qgJHb4cZ8fGjuj9b9ChF)
+[info]  transactions:
+[info]    GenesisTransactionSettings(ATwAPYdriV1aRXAWYmLViW7Y6K5Jb5bZDkT,50000000000000000,0)
+[info]    GenesisTransactionSettings(AUCUg4dFgn52U2PgZb9YhehBXnSqp8EMRqH,50000000000000000,6)
+[info]    GenesisTransactionSettings(AU6sMeLdsswqDQrw4RDo5PVxdGh1v6JDv6t,50000000000000000,12)
+[info]    GenesisTransactionSettings(ATyssF9z8RQRX9UJwwJLm5SbFEFGqEzYSnb,50000000000000000,18)
+[info]    GenesisTransactionSettings(AUDwJXq3esDqasmyVrN5FpXr7iFbKSXL8E2,50000000000000000,24)
+[info]    GenesisTransactionSettings(AUA1pbbCFyFSte38uENPXSAhZa7TH74V2Tc,50000000000000000,30)
+[info]    GenesisTransactionSettings(AU7fEwBgHpe6oeH1iuo2mE5TMCrBxPR8LFc,50000000000000000,36)
+[info]    GenesisTransactionSettings(ATxtBDygMvWtvh9xJaGQn5MdaHsbuQxbjiG,50000000000000000,42)
+[info]    GenesisTransactionSettings(AU1EWbfR8mTwbvzgnY8wdpLy3vEvF64WSEE,50000000000000000,48)
+[info]    GenesisTransactionSettings(AU4u8erPGstSFSCU1U6cLyFNeR9Cbk1x8eU,50000000000000000,54)
+```
+
+## Generate Gensis Block Data
+
+> The node exposes a list of RESTful APIs for users to interact with the blockchain. To get a feel, see the public Swagger API doc for our test net. <br/>
+    You may have noticed that some endpoints have a little lock on the right side. It means the endpoint is privileged and has to be used with an API key(i.e. only people with the API key can call it). <br/>
+    The hash of the key is planted into the node’s configuration hence the node can verify the key
+
+
+```python:
+curl \
+ -X POST \
+ -H "Content-Type: text/plain" \
+ --data "my_api_key" \
+ http://veldidina.vos.systems:9928/utils/hash/secure
+ ```
+
+ You can replace <mark>my_api_key</mark> with anything you like. Collect the hash and we are going to need it later.
+
+Below is an example response
+
+```python:
+{
+  "message" : "my_api_key",
+  "hash" : "7AshJ286oqdpTYoFbEWXDEqY313qYiaFHMvKYTGXsgwY"
+}
+```
+
+## Compose Node Configuration
+
+Download the template configuration file attached below and update for the minter node & peer node accordingly. Fields to update are decorated with a comment <mark># TODO</mark> above so you can quickly navigate to them by searching <mark># TODO</mark> in a text editor.
+
+The minter & the peer share most parts of the configuration. The key difference lies in the ports they use.
+
+1. For RESTful API ports, minter uses <mark>8080</mark>, peer uses <mark>8000</mark>
+
+2. For nodes communication ports, minter uses <mark>19923</mark>, peer uses <mark>19924</mark> 
+
+
+## Launch Docker Container
+
+1. Download the Dockerfile attached below and build the image locally
+
+```python:
+docker build -t vsys -f {path_to_the_dockerfile} .
+```
+
+The VSYS node jar version is by default 0.4.1. It can be overridden by using the --build-arg flag when building.
+
+```python:
+docker build -t vsys -f {path_to_the_dockerfile} --build-arg VSYS_VER=x.y.z .
+```
+
+2. Launch a container for minter
+
+```python:
+docker run -it \
+-p 8080:8080 \
+-p 19923:19923 \
+--name minter \
+--mount type=bind,source="/absolute/path/to/your/minter.conf",target="/vsys/vsys.conf" \
+vsys
+```
+
+3. Launch a container for peer
+
+```python:
+docker run -it \
+-p 8000:8000 \
+-p 19924:19924 \
+--name peer \
+--mount type=bind,source="/absolute/path/to/your/peer.conf",target="/vsys/vsys.conf" \
+vsys
+```
+
+## Verify the Dev Net Runs Properly
+
+1. Type <mark>127.0.0.1:8080</mark> & <mark>127.0.0.1:8000</mark> in the browser and see if the Swagger API doc shows up.
+
+2. Call <mark>curl -X GET http://127.0.0.1:8080/blocks/height</mark> and see if the height increments by ONE per minute.  Below is a quick shell script to query the height every 10 seconds.
+
+```python:
+while true; do
+  curl -X GET http://127.0.0.1:8080/blocks/height
+  sleep 10
+done
+```
