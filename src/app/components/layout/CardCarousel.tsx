@@ -82,7 +82,7 @@ type CardCarouselProps = {
 };
 export const CardCarousel: React.FC<CardCarouselProps> = (props): JSX.Element => {
     const xs = useMediaQuery('(max-width:599px)');
-    const displayCount = xs ? 1 : props.slidesPerPage || 2;
+    const displayCount = xs ? 1 : props.slidesPerPage || 1;
     const isArray = Array.isArray(props.children);
     const showArrows = isArray ? (props.children as any[]).length > displayCount : false;
 
@@ -123,5 +123,5 @@ export const CardCarousel: React.FC<CardCarouselProps> = (props): JSX.Element =>
 CardCarousel.displayName = 'CardCarousel';
 CardCarousel.defaultProps = {
     infinite: true,
-    slidesPerPage: 2,
+    slidesPerPage: 1,
 };

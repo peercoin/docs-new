@@ -26,8 +26,6 @@ import { getScheduledSiteConfig } from '../../__configuration__/themes';
 // import { Spacer } from '@brightlayer-ui/react-components';
 
 import developImage from '../assets/home/develop.jpg';
-import designImage from '../assets/home/design.jpg';
-import { Design as DesignIcon } from '../assets/icons';
 import { usePageTitle } from '../hooks/usePageTitle';
 import { useGoogleAnalyticsPageView } from '../hooks/useGoogleAnalyticsPageView';
 
@@ -118,15 +116,6 @@ export const LandingPage: React.FC = (): JSX.Element => {
 
             {/* Carousel Section */}
             <CardCarousel>
-                <CarouselCard
-                    backgroundImage={designImage}
-                    title={'Getting started as a designer'}
-                    description={
-                        'We have prepared numerous resources for the V Systems protocol.'
-                    }
-                    icon={<DesignIcon fontSize={'large'} />}
-                    onClick={(): void => history.push('/design/intro')}
-                />
                 <CarouselCard
                     backgroundImage={developImage}
                     title={'Getting started as a developer'}
