@@ -32,14 +32,14 @@ cd v-wallet-generator
 ```
 
 2. Enter sbt shell & run
-```python:
+```:
 $ sbt
 sbt:walletgenerator> run --testnet --count 10
 ```
 
 Collect the output and save it as a file where you have something like below. We are going to need it later.
 
-```python:
+```:
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 IMPORTANT - COPY OR MEMORIZE THE SEED PHRASE BELOW FOR KEY RECOVERY!!!
 seed         : foam render square glide social breeze bamboo miracle quick depart wife gravity antique cry offer
@@ -80,7 +80,7 @@ sbt "test:runMain tools.DevelopnetGenesisBlockGenerator"
 
 Collect the output and save it as a file where you have something like below. We are going to need it later.
 
-```python:
+```:
 [info] GenesisSettings:
 [info]  timestamp: 1606373598254137883
 [info]  blockTimestamp: 1606373598254137883
@@ -108,7 +108,7 @@ Collect the output and save it as a file where you have something like below. We
     The hash of the key is planted into the node’s configuration hence the node can verify the key
 
 
-```python:
+```:
 curl \
  -X POST \
  -H "Content-Type: text/plain" \
@@ -120,7 +120,7 @@ curl \
 
 Below is an example response
 
-```python:
+```:
 {
   "message" : "my_api_key",
   "hash" : "7AshJ286oqdpTYoFbEWXDEqY313qYiaFHMvKYTGXsgwY"
@@ -142,19 +142,19 @@ The minter & the peer share most parts of the configuration. The key difference 
 
 1. Download the Dockerfile attached below and build the image locally
 
-```python:
+```:
 docker build -t vsys -f {path_to_the_dockerfile} .
 ```
 
 The VSYS node jar version is by default 0.4.1. It can be overridden by using the --build-arg flag when building.
 
-```python:
+```:
 docker build -t vsys -f {path_to_the_dockerfile} --build-arg VSYS_VER=x.y.z .
 ```
 
 2. Launch a container for minter
 
-```python:
+```:
 docker run -it \
 -p 8080:8080 \
 -p 19923:19923 \
@@ -165,7 +165,7 @@ vsys
 
 3. Launch a container for peer
 
-```python:
+```:
 docker run -it \
 -p 8000:8000 \
 -p 19924:19924 \
@@ -180,7 +180,7 @@ vsys
 
 2. Call <mark>curl -X GET http://127.0.0.1:8080/blocks/height</mark> and see if the height increments by ONE per minute.  Below is a quick shell script to query the height every 10 seconds.
 
-```python:
+```:
 while true; do
   curl -X GET http://127.0.0.1:8080/blocks/height
   sleep 10
