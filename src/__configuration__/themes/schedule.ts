@@ -1,12 +1,12 @@
-import { HalloweenSchedule } from './halloween';
-import { ChristmasSchedule } from './christmas';
-import { defaultTheme } from './default';
 import { Schedule, SiteConfig } from './types';
-import { WomenSDaySchedule } from './women-s-day';
-import { ThanksgivingSchedule } from './thanksgiving';
+import { defaultTheme } from './default';
+// import { HalloweenSchedule } from './halloween';
+import { ChristmasSchedule } from './christmas';
+// import { WomenSDaySchedule } from './women-s-day';
+// import { ThanksgivingSchedule } from './thanksgiving';
 import { NewYearsSchedule } from './new-years';
-import { SpringFestivalSchedule } from './spring-festival';
-import { StPatricksDaySchedule } from './st-patricks-day';
+// import { SpringFestivalSchedule } from './spring-festival';
+// import { StPatricksDaySchedule } from './st-patricks-day';
 
 /**
  * Add more holiday themes here.
@@ -28,13 +28,8 @@ import { StPatricksDaySchedule } from './st-patricks-day';
  * * Dec 31 - Jan 6: New Years
  */
 export const schedule: Schedule[] = [
-    ThanksgivingSchedule,
-    WomenSDaySchedule,
     ChristmasSchedule,
-    HalloweenSchedule,
     NewYearsSchedule,
-    SpringFestivalSchedule,
-    StPatricksDaySchedule,
 ];
 
 /**
