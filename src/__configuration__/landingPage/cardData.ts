@@ -33,6 +33,6 @@ export const cardData = [
         title: 'Community',
         description: `Learn how to join the V Systems developer community by reporting bugs, requesting features, etc.`,
         image: community,
-        path: 'https://discord.gg/7s6RrCAZ',
+        path: 'https://discord.gg/cxQdkdEyMU',
     },
 ];
