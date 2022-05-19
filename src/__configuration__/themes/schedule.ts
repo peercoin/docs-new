@@ -1,10 +1,10 @@
 import { Schedule, SiteConfig } from './types';
 import { defaultTheme } from './default';
 // import { HalloweenSchedule } from './halloween';
-import { ChristmasSchedule } from './christmas';
+// import { ChristmasSchedule } from './christmas';
 // import { WomenSDaySchedule } from './women-s-day';
 // import { ThanksgivingSchedule } from './thanksgiving';
-import { NewYearsSchedule } from './new-years';
+// import { NewYearsSchedule } from './new-years';
 // import { SpringFestivalSchedule } from './spring-festival';
 // import { StPatricksDaySchedule } from './st-patricks-day';
 
@@ -27,10 +27,7 @@ import { NewYearsSchedule } from './new-years';
  * * Dec 26 - Dec 30: Kwanzaa (Kwanzaa runs until Jan 1. Cutting this short to account for New Years.)
  * * Dec 31 - Jan 6: New Years
  */
-export const schedule: Schedule[] = [
-    ChristmasSchedule,
-    NewYearsSchedule,
-];
+export const schedule: Schedule[] = [];
 
 /**
  * @returns a site configuration given the currently applied holiday theme
