@@ -19,134 +19,34 @@ export type RedirectItem = {
 // Change scripts/crawl/sitemap.json after you make changes here.
 export const pageDefinitions: SimpleNavItem[] = [
     {
-        title: 'What is ?',
+        title: 'Introduction to Peercoin',
         url: '/overview',
-        component: <MarkdownPage title={'What is V Systems'} markdown={Docs.Overview} />,
+        component: <MarkdownPage title={'Introduction to Peercoin'} markdown={Docs.Overview} />,
     },
     {
-        title: 'Get Started',
-        url: '/get-started',
+        title: 'Peercoin in comparison',
+        url: '/comparison',
+        component: <MarkdownPage title={'Comparison with other blockchain networks'} markdown={Docs.Comparison.Intro} />,
         pages: [
             {
-                title: 'V Systems Stack',
-                url: '/vsys-stack',
-                component: <MarkdownPage title={'VSYS Stack'} markdown={Docs.GetStarted.VsysStack} />,
+                title: 'Consensus',
+                url: '/consensus',
+                component: <MarkdownPage title={'Consensus algorithm'} markdown={Docs.Comparison.Consensus} />,
             },
             {
-                title: 'Where to Begin?',
-                url: '/where-to-begin',
-                component: <MarkdownPage title={'Where to Begin?'} markdown={Docs.GetStarted.WhereToBegin} />,
+                title: 'Distribution',
+                url: '/distribution',
+                component: <MarkdownPage title={'Distribution and Block Rewards'} markdown={Docs.Comparison.Distribution} />,
             },
             {
-                title: 'Quick Tutorials',
-                url: '/quick-tutorials',
-                component: <MarkdownPage title={'Quick Tutorials'} markdown={Docs.GetStarted.QuickTutorials} />,
+                title: 'Fees',
+                url: '/fees',
+                component: <MarkdownPage title={'Burned and Fixed Fees'} markdown={Docs.Comparison.Fees} />,
             },
             {
-                title: 'Smart Contracts',
-                url: '/smart-contracts',
-                pages: [
-                    {
-                        title: 'Token Contract',
-                        url: '/token-contract',
-                        component: (
-                            <MarkdownPage title={'Token Contract'} markdown={Docs.GetStarted.SmartContracts.TokenContract} />
-                        ),
-                    },
-                    {
-                        title: 'Lock Contract',
-                        url: '/lock-contract',
-                        component: (
-                            <MarkdownPage title={'Lock Contract'} markdown={Docs.GetStarted.SmartContracts.LockContract} />
-                        ),
-                    },
-                    {
-                        title: 'NFT Contract',
-                        url: '/nft-contract',
-                        component: (
-                            <MarkdownPage title={'Non-Fungible Token Contract'} markdown={Docs.GetStarted.SmartContracts.NftContract} />
-                        ),
-                    },
-                    {
-                        title: 'Payment Contract',
-                        url: '/payment-contract',
-                        component: (
-                            <MarkdownPage title={'Payment Channel Contract'} markdown={Docs.GetStarted.SmartContracts.PaymentContract} />
-                        ),
-                    },
-                    {
-                        title: 'V Swap Contract',
-                        url: '/v-swap',
-                        component: (
-                            <MarkdownPage title={'V Swap Contract'} markdown={Docs.GetStarted.SmartContracts.VswapContract} />
-                        ),
-                    },
-                    {
-                        title: 'V Atomic Swap Contract',
-                        url: '/v-atomic-swap',
-                        component: (
-                            <MarkdownPage title={'V Atomic Swap'} markdown={Docs.GetStarted.SmartContracts.VatomicswapContract} />
-                        ),
-                    },
-                    {
-                        title: 'V Stable Swap Contract',
-                        url: '/v-stable-swap',
-                        component: (
-                            <MarkdownPage title={'V Stable Swap'} markdown={Docs.GetStarted.SmartContracts.VstableswapContract} />
-                        ),
-                    },
-                    {
-                        title: 'V Option Contract',
-                        url: '/v-option',
-                        component: (
-                            <MarkdownPage title={'V Option Contract'} markdown={Docs.GetStarted.SmartContracts.VoptionContract} />
-                        ),
-                    },
-                    {
-                        title: 'V Escrow Contract',
-                        url: '/v-escrow',
-                        component: (
-                            <MarkdownPage title={'V Escrow Contract'} markdown={Docs.GetStarted.SmartContracts.VescrowContract} />
-                        ),
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        title: 'API References',
-        url: '/development',
-        pages: [
-            {
-                title: 'Environment Setup',
-                url: '/environment',
-                component: (
-                    <MarkdownPage title={'Environment Setup for Developers'} markdown={Docs.Development.Environment} />
-                ),
-            },
-            {
-                title: 'Testing',
-                url: '/testing',
-                component: <MarkdownPage title={'Testing'} markdown={Docs.Development.Testing} />,
-            },
-        ],
-    },
-    {
-        title: 'Workflows',
-        url: '/workflows',
-        hidden: true,
-        pages: [
-
-        ],
-    },
-    {
-        title: 'Tools',
-        url: '/resources',
-        pages: [
-            {
-                title: 'Testnet Explorer',
-                url: '/testing',
-                component: <MarkdownPage title={'Testing Environment'} markdown={Docs.Development.Testing} />,
+                title: 'Block size and time spacing',
+                url: '/blocksizeandtiming',
+                component: <MarkdownPage title={'Block size limit and block time spacing'} markdown={Docs.Comparison.Blocksize} />,
             },
         ],
     },

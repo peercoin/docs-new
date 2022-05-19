@@ -94,7 +94,7 @@ export const LandingPage: React.FC = (): JSX.Element => {
                     GET STARTED
                 </Button>
             </div>
-            <LandingSection title={'V Systems Development'} align={'left'} background={'light'}>
+            <LandingSection title={'Peercoin Development'} align={'left'} background={'light'}>
                 <Grid container spacing={6} style={{ marginTop: theme.spacing(2) }}>
                     {cardData.map((item, ind) => (
                         <Grid key={`grid${ind}`} item xs={12} sm={6} md={4}>

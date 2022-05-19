@@ -26,7 +26,7 @@ a:link, a:visited {
 blockquote,
 q {
     quotes: none;
-    border-left: 6px #ff8837 solid !important;
+    border-left: 6px #3cb054 solid !important;
     background: rgba(255, 136, 55, 0.1) !important;
     margin: 0px;
     margin-bottom: 1rem;

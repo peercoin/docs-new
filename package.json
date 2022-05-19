@@ -1,5 +1,6 @@
 {
     "name": "peercoin-docs",
+    "license": "BSD-3-Clause",
     "author": "Peercoin developers",
     "version": "0.1",
     "homepage": "https://www.peercoin.net/docs/",

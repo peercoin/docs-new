@@ -12,7 +12,7 @@ export const defaultTheme: SiteConfig = {
             type: 'light',
             primary: {
                 light: Colors.orange[500],
-                main: Colors.orange[500],
+                main: Colors.black[500],
                 dark: Colors.orange[500],
             },
             secondary: {
@@ -55,7 +55,7 @@ export const defaultTheme: SiteConfig = {
             },
             MuiTypography: {
                 colorPrimary: {
-                    color: '#ff8837',
+                    color: '#3cb054',
                 },
                 h1: {
                     fontWeight: 600,
