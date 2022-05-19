@@ -19,7 +19,7 @@ export type RedirectItem = {
 // Change scripts/crawl/sitemap.json after you make changes here.
 export const pageDefinitions: SimpleNavItem[] = [
     {
-        title: 'What is V Systems?',
+        title: 'What is ?',
         url: '/overview',
         component: <MarkdownPage title={'What is V Systems'} markdown={Docs.Overview} />,
     },

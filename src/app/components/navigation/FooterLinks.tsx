@@ -4,7 +4,7 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 
 import * as Colors from '@brightlayer-ui/colors';
 import { NavLink } from './NavLink';
-import { VsysWhite } from '../../assets/icons';
+import { PeercoinLogo } from '../../assets/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -48,13 +48,13 @@ export const FooterLinks: React.FC = (): JSX.Element => {
     const xxs = useMediaQuery('(max-width:614px)');
     const padding = xxs ? theme.spacing(2) : singleColumn ? theme.spacing(4) : theme.spacing(8);
     return (
-        <div className={classes.root} style={{ textAlign: singleColumn ? 'center' : 'left' }}>
+        <div className={`footer ${classes.root}`} style={{ textAlign: singleColumn ? 'center' : 'left' }}>
             {/* Section 1: Brightlayer UI description */}
             <div style={{ flex: '1 1 0px', padding: padding, minWidth: xxs ? '100%' : '' }}>
                 <div style={{ minWidth: xxs ? '100%' : 300 }}>
-                    <VsysWhite />
-                    <Typography variant={'caption'} display={'block'} style={{ marginTop: theme.spacing(2) }}>
-                        V Systems is a blockchain infrastructure provider with a focus on database and cloud services. Led by Chief Architect Sunny King, the V Systems blockchain aims to create a secure underlying infrastructure platform for blockchain database through his new innovation - Supernode Proof of Stake (SPoS) consensus algorithm. 
+                    <PeercoinLogo />
+                    <Typography variant={'caption'} display={'block'} style={{ marginTop: theme.spacing(2), color: 'darkgray' }}>
+                        Peercoin is the original Proof-of-Stake coin.
                     </Typography>
                 </div>
             </div>
@@ -66,40 +66,15 @@ export const FooterLinks: React.FC = (): JSX.Element => {
                 <div style={{ width: xxs ? '100%' : 550, columnCount: xxs ? 1 : 3, columnGap: padding }}>
                     <NavLink
                         to={'/overview'}
-                        title={'What is V Systems?'}
+                        title={'What is Peercoin?'}
                         className={classes.navLink}
                         hoverColor={Colors.white[50]}
                     />
-                    <NavLink
-                        to={'/get-started/vsys-stack'}
-                        title={'VSYS Stack'}
-                        className={classes.navLink}
-                        hoverColor={Colors.white[50]}
-                    />
-                    <NavLink
-                        to={'/get-started/where-to-begin'}
-                        title={'For Developers'}
-                        className={classes.navLink}
-                        hoverColor={Colors.white[50]}
-                    />
-                    <NavLink
-                        to={'/development/environment'}
-                        title={'Environment Setup'}
-                        className={classes.navLink}
-                        hoverColor={Colors.white[50]}
-                    />
-                    <NavLink
-                        to={'/resources'}
-                        title={'Resources'}
-                        className={classes.navLink}
-                        hoverColor={Colors.white[50]}
-                    />
-                    <NavLink
-                        to={'https://www.v.systems/'}
-                        title={'Official Website'}
-                        className={classes.navLink}
-                        hoverColor={Colors.white[50]}
-                    />
+                    <a href='https://www.peercoin.net/'
+                    rel="noopener noreferrer" 
+                    target="_blank"
+                    className={classes.navLink}>
+                    Official Website</a>                       
                 </div>
             </div>
 

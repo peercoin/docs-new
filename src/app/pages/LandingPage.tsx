@@ -120,7 +120,7 @@ export const LandingPage: React.FC = (): JSX.Element => {
                     backgroundImage={developImage}
                     title={'Getting started as a developer'}
                     description={
-                        'We have prepared numerous resources for the V Systems protocol.'
+                        'We have prepared numerous resources for Peercoin.'
                     }
                     icon={<DeveloperMode fontSize={'large'} />}
                     onClick={(): void => history.push('/get-started/where-to-begin')}
@@ -132,7 +132,7 @@ export const LandingPage: React.FC = (): JSX.Element => {
             <AppBar position={'static'} className={classes.footer} elevation={0}>
                 <Toolbar variant={'dense'}>
                     <Typography variant={'caption'} align={'center'} style={{ flex: '1 1 0px' }}>
-                        Copyright {new Date().getFullYear()} V Systems. Licensed under BSD-3-Clause.
+                        Copyright © {new Date().getFullYear()} Peercoin Foundation. Licensed under BSD-3-Clause.
                     </Typography>
                 </Toolbar>
             </AppBar>

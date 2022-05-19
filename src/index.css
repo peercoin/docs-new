@@ -11,8 +11,13 @@ body {
 }
 
 a {
-    color: #ff8837 !important;
+    color: darkgrey !important;
+    
 }
+
+a:link, a:visited {
+    text-decoration: none;
+  }
 
 .headline-text {
     font-weight: 600 !important;
@@ -74,7 +79,11 @@ p.MuiTypography-h5.MuiTypography-paragraph {
 }
 
 .MuiToolbar-root {
-    background: #231815 !important;
+    background: #3cb054 !important;
+}
+
+.footer {
+    background: #e0f5e5 !important;
 }
 
 .MuiToolbar-root .MuiTypography-root {

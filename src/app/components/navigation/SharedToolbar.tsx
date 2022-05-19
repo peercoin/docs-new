@@ -163,7 +163,7 @@ export const SharedToolbar = (props: SharedToolbarProps): JSX.Element => {
                         />
                     ) : (
                         <Typography>
-                            V Systems <b>Documentation</b>
+                            Peercoin <b>Documentation</b>
                         </Typography>
                     )}
                     <Spacer />

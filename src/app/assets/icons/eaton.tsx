@@ -1,7 +1,8 @@
 import React from 'react';
 import SvgIcon, { SvgIconProps } from '@material-ui/core/SvgIcon';
-import logo from './vsystems-main.png';
-import logoWhite from './vsystems-white.png';
+import logo from './peercoin-main.png';
+import logoWhite from './peercoin-white.png';
+import logoSmall from "./peercoin-main-small.png";
 
 
 export const Eaton = (props: SvgIconProps): JSX.Element => (
@@ -10,10 +11,14 @@ export const Eaton = (props: SvgIconProps): JSX.Element => (
     </SvgIcon>
 );
 
-export const Vsys = (): JSX.Element => (
+export const PeercoinLogo = (): JSX.Element => (
     <img style={{height: 60}} src={logo} alt="Logo" />
 );
 
-export const VsysWhite = (): JSX.Element => (
+export const PeercoinLogoSmall = (): JSX.Element => (
+    <img style={{height: 20}} src={logoSmall} alt="Logo" />
+);
+
+export const PeercoinLogoWhite = (): JSX.Element => (
     <img style={{height: 75}} src={logoWhite} alt="Logo" />
 );

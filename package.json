@@ -1,8 +1,8 @@
 {
-    "name": "v-systems-docs",
-    "author": "V Systems developers",
+    "name": "peercoin-docs",
+    "author": "Peercoin developers",
     "version": "0.1",
-    "homepage": "https://docs.v.systems/",
+    "homepage": "https://www.peercoin.net/docs/",
     "private": true,
     "scripts": {
         "start": "node scripts/start.js",

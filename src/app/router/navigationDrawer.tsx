@@ -8,11 +8,10 @@ import {
     DrawerHeader,
     NavItem,
 } from '@brightlayer-ui/react-components';
-import { PxblueSmall } from '@brightlayer-ui/icons-mui';
 import color from 'color';
 
 import { pageDefinitions, SimpleNavItem } from '../../__configuration__/navigationMenu/navigation';
-import { Vsys } from '../assets/icons';
+import { PeercoinLogo, PeercoinLogoSmall } from '../assets/icons';
 import { Typography, useTheme, useMediaQuery } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../redux/reducers';
@@ -100,7 +99,7 @@ export const NavigationDrawer = (): JSX.Element => {
             activeItemBackgroundShape={'round'}
         >
             <DrawerHeader
-                icon={<PxblueSmall />}
+                icon={<PeercoinLogoSmall />}
                 onIconClick={(): void => {
                     if (isMobile) {
                         dispatch({ type: TOGGLE_DRAWER, payload: !drawerOpen });
@@ -123,7 +122,7 @@ export const NavigationDrawer = (): JSX.Element => {
                             dispatch({ type: TOGGLE_DRAWER, payload: false });
                         }}
                     >
-                        <Typography>V Systems Docs</Typography>
+                        <Typography>Peercoin Docs</Typography>
                     </div>
                 }
             />
@@ -143,7 +142,7 @@ export const NavigationDrawer = (): JSX.Element => {
                         window.open('https://www.v.systems', 'blank');
                     }}
                 >
-                    <Vsys />
+                    <PeercoinLogo />
                 </div>
             </DrawerFooter>
         </Drawer>

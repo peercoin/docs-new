@@ -37,7 +37,7 @@ export const PXBLogo: React.FC<PXBLogoProps> = ({ tagline }) => {
     return (
         <div style={{ textAlign: 'center', position: 'relative' }}>
             <Typography variant={'h3'} align={'center'} style={{ fontWeight: 300, marginBottom: theme.spacing() }}>
-                V Systems <b>Documentation</b>
+                Peercoin <b>Documentation</b>
             </Typography>
             {tagline && (
                 <ListItemTag
@@ -54,7 +54,7 @@ export const PXBLogo: React.FC<PXBLogoProps> = ({ tagline }) => {
                     }}
                 />
             )}
-            <Typography align={'center'}>The Blockchain for Real World Apps </Typography>
+            <Typography align={'center'}>The Pioneer of Proof-of-Stake</Typography>
         </div>
     );
 };
@@ -64,7 +64,7 @@ export const SmallPXBLogo: React.FC = () => (
     <div style={{ display: 'inline-flex', alignItems: 'center' }}>
         <PXBlueSVG size={32} color={'white'} />
         <Typography variant={'h5'} style={{ fontWeight: 300, marginLeft: 8 }}>
-            V Systems Documentation
+            Peercoin Documentation
         </Typography>
     </div>
 );

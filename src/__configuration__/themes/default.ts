@@ -1,7 +1,7 @@
 import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import * as Colors from '@brightlayer-ui/colors';
 // import circles from '../../app/assets/themes/circles.svg';
-import bg from '../../app/assets/themes/vsys-docs-banner.jpg';
+import bg from '../../app/assets/themes/peercoin-docs-banner.jpg';
 import { SiteConfig } from './types';
 
 export const defaultTheme: SiteConfig = {
