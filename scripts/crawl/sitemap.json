@@ -1,100 +1,109 @@
 {
-    "title": "V Systems Blockchain | The Blockchain for Real World Applications*",
+    "title": "Peercoin | The Pioneer of Proof-of-Stake",
     "url": "/",
     "hasLandingPage": true,
     "pages": [
         {
-            "title": "What is V Systems?",
+            "title": "Introduction to Peercoin",
             "url": "/overview"
         },
         {
-            "title": "Get Started",
-            "url": "/get-started",
+            "title": "Peercoin in Ccmparison",
+            "url": "/comparison",
             "pages": [
                 {
-                    "title": "V Systems Stack",
-                    "url": "/vsys-stack"
+                    "title": "Consensus",
+                    "url": "/Consensus"
                 },
                 {
-                    "title": "Where to Begin?",
-                    "url": "/where-to-begin"
+                    "title": "Distribution",
+                    "url": "/distribution"
                 },
                 {
-                    "title": "Quick Tutorials",
-                    "url": "/quick-tutorials"
+                    "title": "Fees",
+                    "url": "/fees"
                 },
                 {
-                    "title": "Smart Contracts",
-                    "url": "/smart-contracts",
-                    "pages": [
-                        {
-                            "title": "Token Contract",
-                            "url": "/token-contract"
-                        },
-                        {
-                            "title": "Lock Contract",
-                            "url": "/lock-contract"
-                        },
-                        {
-                            "title": "NFT Contract",
-                            "url": "/nft-contract"
-                        },
-                        {
-                            "title": "Payment Contract",
-                            "url": "/payment-contract"
-                        },
-                        {
-                            "title": "V Swap Contract",
-                            "url": "/v-swap"
-                        },
-                        {
-                            "title": "V Atomic Swap Contract",
-                            "url": "/v-atomic-swap"
-                        },
-                        {
-                            "title": "V Stable Swap Contract",
-                            "url": "/v-stable-swap"
-                        },
-                        {
-                            "title": "V Option Contract",
-                            "url": "/v-option"
-                        },
-                        {
-                            "title": "V Escrow Contract",
-                            "url": "/v-escrow"
-                        }
-                    ]
+                    "title": "Block size and time spacing",
+                    "url": "/blocksizeandtiming"
                 }
             ]
         },
         {
-            "title": "API References",
-            "url": "/development",
+            "title": "Wallets",
+            "url": "/wallets",
             "pages": [
                 {
-                    "title": "Environment Setup",
-                    "url": "/environment"
+                    "title": "Offical Client (Core)",
+                    "url": "/core"
                 },
                 {
-                    "title": "Testing",
-                    "url": "/testing"
+                    "title": "Using Multisig",
+                    "url": "/multisig"
+                },
+                {
+                    "title": "Hardware Wallets",
+                    "url": "/hardware-wallets"
+                },
+                {
+                    "title": "Paperwallets",
+                    "url": "/paperwallet"
+                },
+                {
+                    "title": "Bootstrapping",
+                    "url": "/bootstrapping"
                 }
             ]
         },
         {
-            "title": "Workflows",
-            "url": "/workflows",
-            "hidden": true
+            "title": "PeerAssets",
+            "url": "/peerassets"
         },
         {
-            "title": "Tools",
-            "url": "/resources",
+            "title": "Proof-of-Stake",
+            "url": "/proof-of-stake"
+        },
+        {
+            "title": "Mining",
+            "url": "/mining"
+        },
+        {
+            "title": "Developers",
+            "url": "/developers",
             "pages": [
                 {
-                    "title": "Developer Resources",
-                    "url": "/developer"
+                    "title": "Compiling",
+                    "url": "/compiling"
+                },
+                {
+                    "title": "JSON-RPC API reference",
+                    "url": "/json-rpc-reference"
+                },
+                {
+                    "title": "Developer Notes",
+                    "url": "/developer-notes"
+                },
+                {
+                    "title": "Bitcore Example",
+                    "url": "/bitcore-example"
                 }
             ]
+        },
+        {
+            "title": "Frequently Asked Questions",
+            "url": "/faq"
+        },
+        {
+            "title": "Protocol Versions (Changelog)",
+            "url": "/changelog"
+        },
+        {
+            "title": "Legal Notice",
+            "url": "/legal"
+        },
+        {
+            "title": "Press Mentions",
+            "url": "/press"
         }
     ]
 }
