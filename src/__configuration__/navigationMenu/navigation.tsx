@@ -95,6 +95,16 @@ export const pageDefinitions: SimpleNavItem[] = [
         url: '/peerassets',
         component: <MarkdownPage title={'Introduction to PeerAssets'} markdown={Docs.PeerAssets.PeerAssets} />,
     },
+    {
+        title: 'Proof-of-Stake',
+        url: '/proof-of-stake',
+        component: <MarkdownPage title={'Introduction to Proof-of-Stake'} markdown={Docs.ProofOfStake.ProofOfStake} />,
+    },
+    {
+        title: 'Mining',
+        url: '/mining',
+        component: <MarkdownPage title={'Mining'} markdown={Docs.Mining.Mining} />,
+    },
 ];
 
 export const pageRedirects: RedirectItem[] = [
