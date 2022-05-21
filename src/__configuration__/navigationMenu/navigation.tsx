@@ -105,6 +105,32 @@ export const pageDefinitions: SimpleNavItem[] = [
         url: '/mining',
         component: <MarkdownPage title={'Mining'} markdown={Docs.Mining.Mining} />,
     },
+    {
+        title: 'Developers',
+        url: '/developers',
+        pages: [
+            {
+                title: 'Compiling',
+                url: '/compiling',
+                component: <MarkdownPage title={'Compiling'} markdown={Docs.Developers.Compiling} />,
+            },
+            {
+                title: 'JSON-RPC API reference',
+                url: '/json-rpc-reference',
+                component: <MarkdownPage title={'JSON-RPC'} markdown={Docs.Developers.JsonReference} />,
+            },
+            {
+                title: 'Developer Notes',
+                url: '/developer-notes',
+                component: <MarkdownPage title={'Developer Notes'} markdown={Docs.Developers.DeveloperNotes} />,
+            },
+            {
+                title: 'Bitcore Example',
+                url: '/bitcore-example',
+                component: <MarkdownPage title={'Bitcore Example'} markdown={Docs.Developers.BitcoreExample} />,
+            },
+        ],
+    },
 ];
 
 export const pageRedirects: RedirectItem[] = [

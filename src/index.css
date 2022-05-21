@@ -12,12 +12,12 @@ body {
 
 a {
     color: darkgrey !important;
-    
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     text-decoration: none;
-  }
+}
 
 .headline-text {
     font-weight: 600 !important;
@@ -44,7 +44,7 @@ q:after {
 }
 
 mark {
-    background-color: #eef0f0; /* gray[50] */  
+    background-color: #eef0f0; /* gray[50] */
 }
 
 #search-bar input {
@@ -92,18 +92,40 @@ p.MuiTypography-h5.MuiTypography-paragraph {
 }
 
 .MuiInputBase-root {
-    color: #ffffff !important; 
+    color: #ffffff !important;
 }
 
 .rotateMe {
     animation: 2500ms spin linear infinite;
 }
 
-table, th, td {
-    border: 1px solid #eef0f0;;
-  }
+table,
+th,
+td {
+    border: 1px solid #eef0f0;
+}
 
-.katex, .katex .vlist-t2 {
+th {
+    word-break: normal;
+    background: #3cb054;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 1rem;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+table tbody tr:nth-child(2n + 1) td {
+    background: rgba(34, 34, 34, 0.05);
+}
+
+table tbody tr td {
+    padding: 1rem;
+    border-right: 1px solid rgba(34, 34, 34, 0.05);
+    line-height: 1.9rem;
+}
+
+.katex,
+.katex .vlist-t2 {
     margin-right: -2px;
     font-size: 22px;
 }
