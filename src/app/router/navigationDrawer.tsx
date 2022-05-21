@@ -139,7 +139,7 @@ export const NavigationDrawer = (): JSX.Element => {
                         cursor: 'pointer',
                     }}
                     onClick={(): void => {
-                        window.open('https://www.v.systems', 'blank');
+                        window.open('https://www.peercoin.net', 'blank');
                     }}
                 >
                     <PeercoinLogo />
