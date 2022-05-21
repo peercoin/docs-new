@@ -136,6 +136,21 @@ export const pageDefinitions: SimpleNavItem[] = [
         url: '/faq',
         component: <MarkdownPage title={'Frequently Asked Questions'} markdown={Docs.FAQ.FAQ} />,
     },
+    {
+        title: 'Protocol Versions (Changelog)',
+        url: '/changelog',
+        component: <MarkdownPage title={'Protocol Versions (Changelog)'} markdown={Docs.Changelog.Changelog} />,
+    },
+    {
+        title: 'Legal Notice',
+        url: '/legal',
+        component: <MarkdownPage title={'Legal Notice'} markdown={Docs.Legal.Legal} />,
+    },
+    {
+        title: 'Press Mentions',
+        url: '/press',
+        component: <MarkdownPage title={'Press Mentions'} markdown={Docs.Press.Press} />,
+    },
 ];
 
 export const pageRedirects: RedirectItem[] = [
