@@ -1,15 +1,15 @@
 {
     "title": "Peercoin | The Pioneer of Proof-of-Stake",
-    "url": "/",
+    "url": "",
     "hasLandingPage": true,
     "pages": [
         {
             "title": "Introduction to Peercoin",
-            "url": "overview"
+            "url": "/overview"
         },
         {
             "title": "Peercoin in Comparison",
-            "url": "comparison",
+            "url": "/comparison",
             "pages": [
                 {
                     "title": "Consensus",
@@ -31,7 +31,7 @@
         },
         {
             "title": "Wallets",
-            "url": "wallets",
+            "url": "/wallets",
             "pages": [
                 {
                     "title": "Offical Client (Core)",
@@ -57,19 +57,19 @@
         },
         {
             "title": "PeerAssets",
-            "url": "peerassets"
+            "url": "/peerassets"
         },
         {
             "title": "Proof-of-Stake",
-            "url": "proof-of-stake"
+            "url": "/proof-of-stake"
         },
         {
             "title": "Mining",
-            "url": "mining"
+            "url": "/mining"
         },
         {
             "title": "Developers",
-            "url": "developers",
+            "url": "/developers",
             "pages": [
                 {
                     "title": "Compiling",
@@ -91,19 +91,19 @@
         },
         {
             "title": "Frequently Asked Questions",
-            "url": "faq"
+            "url": "/faq"
         },
         {
             "title": "Protocol Versions (Changelog)",
-            "url": "changelog"
+            "url": "/changelog"
         },
         {
             "title": "Legal Notice",
-            "url": "legal"
+            "url": "/legal"
         },
         {
             "title": "Press Mentions",
-            "url": "press"
+            "url": "/press"
         }
     ]
 }

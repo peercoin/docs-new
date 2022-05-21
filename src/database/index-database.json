@@ -1,10 +1,10 @@
 {
     "title": {
-        "peercoin": [{ "/": 1 }, { "/overview": 1 }],
-        "pioneer": [{ "/": 1 }],
-        "of": [{ "/": 2 }, { "/proof-of-stake": 1 }],
-        "proof": [{ "/": 1 }, { "/proof-of-stake": 1 }],
-        "stake": [{ "/": 1 }, { "/proof-of-stake": 1 }],
+        "peercoin": [{ "": 1 }, { "/overview": 1 }],
+        "pioneer": [{ "": 1 }],
+        "of": [{ "": 2 }, { "/proof-of-stake": 1 }],
+        "proof": [{ "": 1 }, { "/proof-of-stake": 1 }],
+        "stake": [{ "": 1 }, { "/proof-of-stake": 1 }],
         "introduction": [{ "/overview": 1 }],
         "to": [{ "/overview": 1 }],
         "consensus": [{ "/comparison/consensus": 1 }],
