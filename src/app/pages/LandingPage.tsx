@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) =>
             width: '100%',
             minHeight: 300,
             color: '#231815',
-            backgroundColor: '#FF8232',
+            backgroundColor: 'darkgrey',
             backgroundSize: 'cover',
             backgroundPosition: '-240px center',
         },
