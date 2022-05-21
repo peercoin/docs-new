@@ -26,7 +26,9 @@ export const pageDefinitions: SimpleNavItem[] = [
     {
         title: 'Peercoin in comparison',
         url: '/comparison',
-        component: <MarkdownPage title={'Comparison with other blockchain networks'} markdown={Docs.Comparison.Intro} />,
+        component: (
+            <MarkdownPage title={'Comparison with other blockchain networks'} markdown={Docs.Comparison.Intro} />
+        ),
         pages: [
             {
                 title: 'Consensus',
@@ -36,7 +38,9 @@ export const pageDefinitions: SimpleNavItem[] = [
             {
                 title: 'Distribution',
                 url: '/distribution',
-                component: <MarkdownPage title={'Distribution and Block Rewards'} markdown={Docs.Comparison.Distribution} />,
+                component: (
+                    <MarkdownPage title={'Distribution and Block Rewards'} markdown={Docs.Comparison.Distribution} />
+                ),
             },
             {
                 title: 'Fees',
@@ -46,7 +50,43 @@ export const pageDefinitions: SimpleNavItem[] = [
             {
                 title: 'Block size and time spacing',
                 url: '/blocksizeandtiming',
-                component: <MarkdownPage title={'Block size limit and block time spacing'} markdown={Docs.Comparison.Blocksize} />,
+                component: (
+                    <MarkdownPage
+                        title={'Block size limit and block time spacing'}
+                        markdown={Docs.Comparison.Blocksize}
+                    />
+                ),
+            },
+        ],
+    },
+    {
+        title: 'Wallets',
+        url: '/wallets',
+        pages: [
+            {
+                title: 'Offical Client (Core)',
+                url: '/core',
+                component: <MarkdownPage title={'Consensus algorithm'} markdown={Docs.Wallets.Core} />,
+            },
+            {
+                title: 'Using Multisig',
+                url: '/multisig',
+                component: <MarkdownPage title={'Using Multisig'} markdown={Docs.Wallets.UsingMultisig} />,
+            },
+            {
+                title: 'Hardware Wallets',
+                url: '/hardware-wallets',
+                component: <MarkdownPage title={'Hardware Wallets'} markdown={Docs.Wallets.HardwareWallets} />,
+            },
+            {
+                title: 'Paperwallets',
+                url: '/paperwallet',
+                component: <MarkdownPage title={'Paper Wallet Tutorial'} markdown={Docs.Wallets.Paperwallet} />,
+            },
+            {
+                title: 'Bootstrapping',
+                url: '/bootstrapping',
+                component: <MarkdownPage title={'Bootstrapping Tutorial'} markdown={Docs.Wallets.Bootstrapping} />,
             },
         ],
     },

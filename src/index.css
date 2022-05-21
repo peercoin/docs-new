@@ -27,7 +27,7 @@ blockquote,
 q {
     quotes: none;
     border-left: 6px #3cb054 solid !important;
-    background: rgba(255, 136, 55, 0.1) !important;
+    background: #e0f5e5 !important;
     margin: 0px;
     margin-bottom: 1rem;
     padding-left: 16px;
