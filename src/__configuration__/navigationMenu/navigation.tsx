@@ -131,6 +131,11 @@ export const pageDefinitions: SimpleNavItem[] = [
             },
         ],
     },
+    {
+        title: 'Frequently Asked Questions',
+        url: '/faq',
+        component: <MarkdownPage title={'Frequently Asked Questions'} markdown={Docs.FAQ.FAQ} />,
+    },
 ];
 
 export const pageRedirects: RedirectItem[] = [

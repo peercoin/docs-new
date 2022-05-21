@@ -6,5 +6,6 @@ import * as PeerAssets from './peerassets';
 import * as ProofOfStake from './proof-of-stake';
 import * as Mining from './mining';
 import * as Developers from './developers';
+import * as FAQ from './faq';
 
-export { Overview, NotFound, Comparison, Wallets, PeerAssets, ProofOfStake, Mining, Developers };
+export { Overview, NotFound, Comparison, Wallets, PeerAssets, ProofOfStake, Mining, Developers, FAQ };
