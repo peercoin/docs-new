@@ -33,6 +33,6 @@ export const cardData = [
         title: 'Community',
         description: `Learn how to join the Peercoin developer community by reporting bugs, requesting features, etc.`,
         image: community,
-        path: 'https://discord.gg/XPxfwtG',
+        path: 'https://www.peercoin.net/resources#communities',
     },
 ];
