@@ -13,8 +13,8 @@ import {
 import {
     InfoCard,
     Section as LandingSection,
-    CardCarousel,
-    CarouselCard,
+    // CardCarousel,
+    // CarouselCard,
     FooterLinks,
     SharedToolbar,
 } from '../components';
@@ -25,12 +25,12 @@ import { cardData } from '../../__configuration__/landingPage/cardData';
 import { getScheduledSiteConfig } from '../../__configuration__/themes';
 // import { Spacer } from '@brightlayer-ui/react-components';
 
-import developImage from '../assets/home/develop.jpg';
+// import developImage from '../assets/home/develop.jpg';
 import { usePageTitle } from '../hooks/usePageTitle';
 import { useGoogleAnalyticsPageView } from '../hooks/useGoogleAnalyticsPageView';
 
 import { PXBLogo } from '../assets/icons/PXBLogo';
-import { Menu, DeveloperMode } from '@material-ui/icons';
+import { Menu } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -115,7 +115,7 @@ export const LandingPage: React.FC = (): JSX.Element => {
             </LandingSection>
 
             {/* Carousel Section */}
-            <CardCarousel>
+            {/* <CardCarousel>
                 <CarouselCard
                     backgroundImage={developImage}
                     title={'Getting started as a developer'}
@@ -125,7 +125,7 @@ export const LandingPage: React.FC = (): JSX.Element => {
                     icon={<DeveloperMode fontSize={'large'} />}
                     onClick={(): void => history.push('/get-started/where-to-begin')}
                 />
-            </CardCarousel>
+            </CardCarousel> */}
 
             {/* Footer Section */}
             <FooterLinks />

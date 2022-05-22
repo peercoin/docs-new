@@ -91,6 +91,10 @@ p.MuiTypography-h5.MuiTypography-paragraph {
     font-weight: bold;
 }
 
+.MuiIconButton-root {
+    color: white !important;
+}
+
 .MuiInputBase-root {
     color: #ffffff !important;
 }

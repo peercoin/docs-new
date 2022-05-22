@@ -155,7 +155,10 @@ export const SharedToolbar = (props: SharedToolbarProps): JSX.Element => {
                         <ListItemText
                             id={'dropdown-toolbar-text'}
                             primary={
-                                <Typography variant={'h6'} style={{ fontWeight: 600, lineHeight: 1 }}>
+                                <Typography
+                                    variant={'h6'}
+                                    style={{ fontWeight: 600, lineHeight: 1, textAlign: 'right' }}
+                                >
                                     {title}
                                 </Typography>
                             }
