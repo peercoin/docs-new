@@ -92,7 +92,7 @@ export const MainRouter = (): JSX.Element => {
     const sidebarOpen = useSelector((state: AppState) => state.app.sidebarOpen);
 
     return (
-        <Router>
+        <Router basename="/docs">
             <ScrollToTop />
             <DrawerLayout drawer={<NavigationDrawer />} className={className}>
                 <Switch>

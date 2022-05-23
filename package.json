@@ -3,7 +3,7 @@
     "license": "BSD-3-Clause",
     "author": "Peercoin developers",
     "version": "0.1",
-    "homepage": "",
+    "homepage": ".",
     "private": true,
     "scripts": {
         "start": "node scripts/start.js",
