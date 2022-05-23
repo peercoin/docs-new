@@ -27,7 +27,7 @@ const buildRoutes = (routes: SimpleNavItem[], url: string): JSX.Element[] => {
     for (let i = 0; i < routes.length; i++) {
         if (routes[i].component) {
             ret.push(
-                <Route path={`${url}${routes[i].url || ''}`} key={`${url}/${routes[i].url || ''}`}>
+                <Route exact path={`${url}${routes[i].url || ''}`} key={`${url}/${routes[i].url || ''}`}>
                     {routes[i].component}
                 </Route>
             );
@@ -42,7 +42,7 @@ const buildRoutes = (routes: SimpleNavItem[], url: string): JSX.Element[] => {
 const buildRedirects = (): JSX.Element[] => {
     const ret: JSX.Element[] = [];
     for (let i = 0; i < pageRedirects.length; i++) {
-        ret.push(<Redirect from={pageRedirects[i].oldUrl} to={pageRedirects[i].newUrl} key={i} />);
+        ret.push(<Redirect exact from={pageRedirects[i].oldUrl} to={pageRedirects[i].newUrl} key={i} />);
     }
     return ret;
 };
@@ -92,11 +92,11 @@ export const MainRouter = (): JSX.Element => {
     const sidebarOpen = useSelector((state: AppState) => state.app.sidebarOpen);
 
     return (
-        <Router basename="/docs-new/">
+        <Router basename="/docs-new">
             <ScrollToTop />
             <DrawerLayout drawer={<NavigationDrawer />} className={className}>
                 <Switch>
-                    <Route path="/">
+                    <Route exact path="/">
                         <LandingPage />
                     </Route>
                     <Route path="*">
