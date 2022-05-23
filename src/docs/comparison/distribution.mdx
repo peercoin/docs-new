@@ -1,0 +1,15 @@
+<!-- KEYWORDS: comparison, consensus, distribution, proof-of-stake, proof-of-work, limit, size, reward  -->
+# Distribution and Block Rewards
+
+Peercoin is created through the process of creating blocks, both PoW and PoS, and has no true upper limit on supply (the 'MAX_MONEY' variable in the code is only used as a precaution). PoW block rewards are used to create a fair initial distribution of coins in the network. The algorithm for PoW rewards is logarithmically decaying as the difficulty and computational power of the network increases. The trending development of SHA256 ASIC miners as the industry standard allows for efficient distribution that naturally eclipses as cryptocurrency gains widespread adoption.
+
+Proof-of-Work reward formula is: `block_subsidy = 9999 / difficulty ^ (1/4)`
+
+Proof-of-Work coin mint rate is a function of difficulty, for every 16x in difficulty mint rate is halved.
+
+PoS rewards are given to those securing the network against attackers and are determined by a linear function with two components. The first dynamic portion results in 3% of the coins used to mint annually. The second static portion results in an additional 0.25% inflation of the coin supply distributed evenly amongst the blocks expected in a year, which approximately equals 1.25 ppc but scales with the size of the supply.
+
+Proof-of-Stake reward formula is:
+Proof-of-Stake coin mint rate is ~3-5% interest per year
+
+At current network parameters, the inflation due to PoS is ~0.95%, while the inflation due to PoW is ~1.45%.  The total current annual inflation rate of ~2.4% is within the 1-3% window that is generally considered healthy for a currency or a broadly used unit of account.

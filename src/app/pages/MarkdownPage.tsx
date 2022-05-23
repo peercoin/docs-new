@@ -17,6 +17,7 @@ export type MarkdownPageProps = HTMLAttributes<HTMLDivElement> & {
     sidebar?: boolean;
 };
 
+
 export const MarkdownPage: React.FC<MarkdownPageProps> = (props): JSX.Element => {
     const { title, markdown: Markdown, noPadding, background, wideLayout, sidebar, ...divProps } = props;
     usePageTitle(title);
@@ -40,6 +41,7 @@ export const MarkdownPage: React.FC<MarkdownPageProps> = (props): JSX.Element =>
                 wideLayout={wideLayout}
                 style={{
                     marginRight: sidebar && sidebarOpen ? (sm ? 0 : 350) : 0,
+                    marginTop: 75,
                     transition: `margin ${theme.transitions.duration.standard} ${theme.transitions.easing.easeInOut}`,
                     minWidth: 0,
                 }}

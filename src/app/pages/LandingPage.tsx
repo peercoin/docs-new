@@ -13,30 +13,24 @@ import {
 import {
     InfoCard,
     Section as LandingSection,
-    CardCarousel,
-    CarouselCard,
+    // CardCarousel,
+    // CarouselCard,
     FooterLinks,
     SharedToolbar,
-    ContributorsList,
 } from '../components';
-import { LatestReleases } from '../../docs';
 import * as Colors from '@brightlayer-ui/colors';
 import { useHistory } from 'react-router-dom';
 
 import { cardData } from '../../__configuration__/landingPage/cardData';
 import { getScheduledSiteConfig } from '../../__configuration__/themes';
-import { Spacer } from '@brightlayer-ui/react-components';
-import { ReleaseInfo } from '../../docs/release-notes';
-import { currentMaintainers, contributors } from '../../__configuration__/contributors';
+// import { Spacer } from '@brightlayer-ui/react-components';
 
-import developImage from '../assets/home/develop.jpg';
-import designImage from '../assets/home/design.jpg';
-import { Design as DesignIcon } from '../assets/icons';
+// import developImage from '../assets/home/develop.jpg';
 import { usePageTitle } from '../hooks/usePageTitle';
 import { useGoogleAnalyticsPageView } from '../hooks/useGoogleAnalyticsPageView';
 
 import { PXBLogo } from '../assets/icons/PXBLogo';
-import { Menu, DeveloperMode } from '@material-ui/icons';
+import { Menu } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -45,9 +39,11 @@ const useStyles = makeStyles((theme: Theme) =>
             flexDirection: 'column',
             alignItems: 'center',
             padding: `${theme.spacing(8)}px ${theme.spacing(4)}px`,
+            marginTop: 50,
             width: '100%',
-            color: theme.palette.primary.contrastText,
-            backgroundColor: theme.palette.primary.main,
+            minHeight: 300,
+            color: '#231815',
+            backgroundColor: 'darkgrey',
             backgroundSize: 'cover',
             backgroundPosition: '-240px center',
         },
@@ -98,7 +94,7 @@ export const LandingPage: React.FC = (): JSX.Element => {
                     GET STARTED
                 </Button>
             </div>
-            <LandingSection title={'Design and Development'} align={'left'} background={'light'}>
+            <LandingSection title={'Peercoin Development'} align={'left'} background={'light'}>
                 <Grid container spacing={6} style={{ marginTop: theme.spacing(2) }}>
                     {cardData.map((item, ind) => (
                         <Grid key={`grid${ind}`} item xs={12} sm={6} md={4}>
@@ -117,84 +113,26 @@ export const LandingPage: React.FC = (): JSX.Element => {
                     ))}
                 </Grid>
             </LandingSection>
-            <LandingSection title={'Latest Updates'} align={'center'} maxWidth={750} background={'dark'}>
-                <Typography style={{ marginTop: theme.spacing(2), color: theme.palette.text.secondary }}>
-                    Get the latest updates on guidelines, components, and documentation across platforms.
-                </Typography>
-                {LatestReleases.slice(0, 2).map((item: ReleaseInfo) => (
-                    <div key={item.title} style={{ color: theme.palette.text.secondary, textAlign: 'left' }}>
-                        <div style={{ marginTop: theme.spacing(2), display: 'flex' }}>
-                            <Typography variant={'h6'} color={'primary'}>
-                                {item.title}
-                            </Typography>
-                            <Spacer />
-                            <Typography color={'inherit'}>{item.date}</Typography>
-                        </div>
-                        <Typography variant={'subtitle2'}>{`v${item.version}`}</Typography>
-                        {item.summary}
-                    </div>
-                ))}
-                <Button
-                    variant={'outlined'}
-                    color={'primary'}
-                    style={{ marginTop: theme.spacing(1) }}
-                    onClick={(): void => history.push('/release-notes')}
-                >
-                    VIEW ALL
-                </Button>
-            </LandingSection>
 
             {/* Carousel Section */}
-            <CardCarousel>
-                <CarouselCard
-                    backgroundImage={designImage}
-                    title={'Getting started as a designer'}
-                    description={
-                        'We offer many resources and assets for designers getting acquainted with Brightlayer UI.'
-                    }
-                    icon={<DesignIcon fontSize={'large'} />}
-                    onClick={(): void => history.push('/design/intro')}
-                />
+            {/* <CardCarousel>
                 <CarouselCard
                     backgroundImage={developImage}
                     title={'Getting started as a developer'}
                     description={
-                        'We have numerous guides and resources to prepare you for working with Brightlayer UI.'
+                        'We have prepared numerous resources for Peercoin.'
                     }
                     icon={<DeveloperMode fontSize={'large'} />}
-                    onClick={(): void => history.push('/development/environment')}
+                    onClick={(): void => history.push('/get-started/where-to-begin')}
                 />
-            </CardCarousel>
-
-            <LandingSection title={'Contributors'} background={'light'}>
-                <ContributorsList
-                    contributors={currentMaintainers}
-                    title={'Current Maintainers'}
-                    style={{ margin: `${theme.spacing(4)}px 0` }}
-                />
-                <ContributorsList
-                    contributors={contributors}
-                    title={'Other Contributors'}
-                    style={{ margin: `${theme.spacing(4)}px 0` }}
-                />
-                <div style={{ textAlign: 'center' }}>
-                    <Button
-                        variant={'outlined'}
-                        color={'primary'}
-                        style={{ marginTop: theme.spacing(1) }}
-                        onClick={(): void => history.push('/community/innersourcing')}
-                    >
-                        Become a Contributor!
-                    </Button>
-                </div>
-            </LandingSection>
+            </CardCarousel> */}
 
             {/* Footer Section */}
             <FooterLinks />
             <AppBar position={'static'} className={classes.footer} elevation={0}>
                 <Toolbar variant={'dense'}>
                     <Typography variant={'caption'} align={'center'} style={{ flex: '1 1 0px' }}>
-                        Copyright {new Date().getFullYear()} Eaton. Licensed under BSD-3-Clause.
+                        Copyright © {new Date().getFullYear()} Peercoin Foundation. Licensed under BSD-3-Clause.
                     </Typography>
                 </Toolbar>
             </AppBar>

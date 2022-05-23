@@ -1,27 +1,27 @@
 import Overview from './overview.mdx';
 import NotFound from './notfound.mdx';
-import LatestReleases from './release-notes/index';
-import Migration from './migration.mdx';
-import * as Style from './style';
-import * as Patterns from './patterns';
-import * as GetStarted from './get-started';
-import * as Development from './development';
-import * as Community from './community';
-import * as Design from './design';
-import * as Resources from './resources';
-import * as Workflows from './workflows';
+import * as Comparison from './comparison';
+import * as Wallets from './wallets';
+import * as PeerAssets from './peerassets';
+import * as ProofOfStake from './proof-of-stake';
+import * as Mining from './mining';
+import * as Developers from './developers';
+import * as FAQ from './faq';
+import * as Changelog from './changelog';
+import * as Legal from './legal';
+import * as Press from './press';
 
 export {
     Overview,
     NotFound,
-    Migration,
-    LatestReleases,
-    Style,
-    Patterns,
-    GetStarted,
-    Development,
-    Community,
-    Design,
-    Resources,
-    Workflows,
+    Comparison,
+    Wallets,
+    PeerAssets,
+    ProofOfStake,
+    Mining,
+    Developers,
+    FAQ,
+    Changelog,
+    Legal,
+    Press,
 };

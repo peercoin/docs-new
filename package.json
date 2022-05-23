@@ -1,7 +1,9 @@
 {
-    "name": "doc-it",
-    "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
-    "version": "2.4.2",
+    "name": "peercoin-docs",
+    "license": "BSD-3-Clause",
+    "author": "Peercoin developers",
+    "version": "0.1",
+    "homepage": "",
     "private": true,
     "scripts": {
         "start": "node scripts/start.js",
@@ -48,9 +50,11 @@
         "react-device-detect": "^1.14.0",
         "react-dom": "^17.0.2",
         "react-ga": "^3.0.0",
+        "react-katex": "^2.0.2",
         "react-redux": "^7.2.0",
         "react-router-dom": "^5.1.2",
-        "redux": "^4.0.5"
+        "redux": "^4.0.5",
+        "remark-math": "^5.1.1"
     },
     "devDependencies": {
         "@babel/core": "7.12.3",
@@ -117,7 +121,6 @@
         "markdown-link-check": "^3.8.0",
         "mini-css-extract-plugin": "0.11.3",
         "natural": "^5.0.0",
-        "node-sass": "^5.0.0",
         "optimize-css-assets-webpack-plugin": "5.0.4",
         "pnp-webpack-plugin": "1.6.4",
         "postcss-flexbugs-fixes": "4.2.1",
@@ -131,6 +134,7 @@
         "react-refresh": "^0.8.3",
         "resolve": "1.18.1",
         "resolve-url-loader": "^3.1.2",
+        "sass": "^1.49.0",
         "sass-loader": "^10.0.5",
         "semver": "7.3.2",
         "source-map-explorer": "^2.5.0",

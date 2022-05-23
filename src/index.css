@@ -10,11 +10,24 @@ body {
     padding: 0;
 }
 
+a {
+    color: darkgrey !important;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+.headline-text {
+    font-weight: 600 !important;
+}
+
 blockquote,
 q {
     quotes: none;
-    border-left: 6px #007bc1 solid;
-    background: rgba(0, 123, 193, 0.1);
+    border-left: 6px #3cb054 solid !important;
+    background: #e0f5e5 !important;
     margin: 0px;
     margin-bottom: 1rem;
     padding-left: 16px;
@@ -28,6 +41,10 @@ q:before,
 q:after {
     content: '';
     content: none;
+}
+
+mark {
+    background-color: #eef0f0; /* gray[50] */
 }
 
 #search-bar input {
@@ -61,8 +78,60 @@ p.MuiTypography-h5.MuiTypography-paragraph {
     clear: both;
 }
 
+.MuiToolbar-root {
+    background: #3cb054 !important;
+}
+
+.footer {
+    background: #e0f5e5 !important;
+}
+
+.MuiToolbar-root .MuiTypography-root {
+    color: white !important;
+    font-weight: bold;
+}
+
+.MuiIconButton-root {
+    color: white !important;
+}
+
+.MuiInputBase-root {
+    color: #ffffff !important;
+}
+
 .rotateMe {
     animation: 2500ms spin linear infinite;
+}
+
+table,
+th,
+td {
+    border: 1px solid #eef0f0;
+}
+
+th {
+    word-break: normal;
+    background: #3cb054;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 1rem;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+table tbody tr:nth-child(2n + 1) td {
+    background: rgba(34, 34, 34, 0.05);
+}
+
+table tbody tr td {
+    padding: 1rem;
+    border-right: 1px solid rgba(34, 34, 34, 0.05);
+    line-height: 1.9rem;
+}
+
+.katex,
+.katex .vlist-t2 {
+    margin-right: -2px;
+    font-size: 22px;
 }
 
 @keyframes spin {

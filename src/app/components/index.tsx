@@ -5,7 +5,6 @@ export * from './navigation';
 export * from './resources';
 export * from './InfoCard';
 export * from './docsUtil';
-export * from './contributors';
 export * from './faq';
 export * from './typography';
 export * from './theme';

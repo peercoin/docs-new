@@ -1,19 +1,12 @@
-import { HalloweenSchedule } from './halloween';
-import { MayTheFourthSchedule } from './may-the-fourth';
-import { ChristmasSchedule } from './christmas';
-import { defaultTheme } from './default';
 import { Schedule, SiteConfig } from './types';
-import { DiwaliSchedule } from './diwali';
-import { WomenSDaySchedule } from './women-s-day';
-import { ThanksgivingSchedule } from './thanksgiving';
-import { HanukkahSchedule } from './hanukkah';
-import { KwanzaaSchedule } from './kwanzaa';
-import { NewYearsSchedule } from './new-years';
-import { SpringFestivalSchedule } from './spring-festival';
-import { StPatricksDaySchedule } from './st-patricks-day';
-import { EarthDaySchedule } from './earth-day';
-import { IndependenceDaySchedule } from './independence-day';
-import { MidAutumnSchedule } from './mid-autumn-festival';
+import { defaultTheme } from './default';
+// import { HalloweenSchedule } from './halloween';
+// import { ChristmasSchedule } from './christmas';
+// import { WomenSDaySchedule } from './women-s-day';
+// import { ThanksgivingSchedule } from './thanksgiving';
+// import { NewYearsSchedule } from './new-years';
+// import { SpringFestivalSchedule } from './spring-festival';
+// import { StPatricksDaySchedule } from './st-patricks-day';
 
 /**
  * Add more holiday themes here.
@@ -34,22 +27,7 @@ import { MidAutumnSchedule } from './mid-autumn-festival';
  * * Dec 26 - Dec 30: Kwanzaa (Kwanzaa runs until Jan 1. Cutting this short to account for New Years.)
  * * Dec 31 - Jan 6: New Years
  */
-export const schedule: Schedule[] = [
-    ThanksgivingSchedule,
-    WomenSDaySchedule,
-    DiwaliSchedule,
-    ChristmasSchedule,
-    HalloweenSchedule,
-    MayTheFourthSchedule,
-    HanukkahSchedule,
-    KwanzaaSchedule,
-    NewYearsSchedule,
-    SpringFestivalSchedule,
-    StPatricksDaySchedule,
-    EarthDaySchedule,
-    IndependenceDaySchedule,
-    MidAutumnSchedule,
-];
+export const schedule: Schedule[] = [];
 
 /**
  * @returns a site configuration given the currently applied holiday theme

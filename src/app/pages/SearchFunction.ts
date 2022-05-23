@@ -1,6 +1,6 @@
 import { Result } from '../../__types__';
 
-const MAX_RESULT = 10; // stop searching once we get 10 results
+const MAX_RESULT = 5; // stop searching once we get 10 results
 const MAX_TEXT_LENGTH = 300; // get this many characters as a preview
 
 // return
