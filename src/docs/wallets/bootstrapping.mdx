@@ -52,12 +52,12 @@ On linux and OS X you can create hash of the bootstrap:
 
 ## How do I use a `bootstrap.dat`?
 
-Assuming you're on linux and you haven't started the Peercoin client before.
+Assuming you're on linux, it should be very similar if not the same on the OSX.
+First, decompress the bootstrap if it is compressed, then simply launch the node with adequate command:
 
-Make the directory `~/.peercoin` if it doesn't exist and then move the
-`bootstrap.dat` into the `~/.peercoin` directory.
+> peercoind -loadblock=bootstrap.dat
 
-Start the Peercoin client. You should see the status `Importing blocks from disk...` if the client has found the `bootstrap.dat` and is using it to
+You should see the status `Importing blocks from disk...` if the client has found the `bootstrap.dat` and is using it to
 sync the block chain.
 
 ## Footnotes
